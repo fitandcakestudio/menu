@@ -16,7 +16,8 @@
 
 <p id="error" style="color:red;"></p>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 const supabaseClient = supabase.createClient(
@@ -34,9 +35,10 @@ async function login() {
   });
 
   if (error) {
-    document.getElementById("error").innerText = "Hatalı giriş";
+    console.log(error);
+    document.getElementById("error").innerText = error.message;
   } else {
-    window.location.href = "adminpanel.html";
+    alert("Login başarılı");
   }
 }
 </script>

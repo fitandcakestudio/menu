@@ -1,3 +1,4 @@
+console.log("VERSION 999");
 const supabaseClient = supabase.createClient(
   "https://zjqormxrjvhvbmdfazej.supabase.co",
   "sb_publishable_OLNn50ApEwEeLZQk49u74A_Eue6jUfG"

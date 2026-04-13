@@ -16,6 +16,6 @@ async function login() {
     console.log(error);
     document.getElementById("error").innerText = error.message;
   } else {
-    window.location.href = "adminpanel.html";
+    window.location.href = "adminpanel_new.html";
   }
 }

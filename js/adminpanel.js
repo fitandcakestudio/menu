@@ -74,6 +74,10 @@ async function saveToDB(amount, desc, type, email) {
 
   loadExpenses();
 }
+console.log("RAW:", e.created_at);
+console.log("DATE OBJ:", new Date(e.created_at));
+console.log("HOURS:", new Date(e.created_at).getHours());
+console.log("UTC HOURS:", new Date(e.created_at).getUTCHours());
 
 async function loadExpenses() {
   const { data, error } = await supabaseClient

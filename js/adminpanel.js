@@ -6,23 +6,33 @@ const supabaseClient = supabase.createClient(
 let timeout;
 let interval;
 
-// 🇹🇷 TARİH FORMAT FONKSİYONU
-
+// 🇹🇷 TARİH FORMAT (UTC → TR +3 SAAT)
 function formatDateTR(dateString) {
   const date = new Date(dateString);
 
-  // UTC +3 saat ekle
-  date.setHours(date.getHours() + 3);
+  let hours = date.getUTCHours() + 3;
+  const minutes = date.getUTCMinutes();
+  const seconds = date.getUTCSeconds();
 
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const year = date.getFullYear();
+  let day = date.getUTCDate();
+  let month = date.getUTCMonth() + 1;
+  let year = date.getUTCFullYear();
 
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
+  // gün taşması kontrolü
+  if (hours >= 24) {
+    hours -= 24;
+    day += 1;
+  }
 
-  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  const d = String(day).padStart(2, "0");
+  const m = String(month).padStart(2, "0");
+  const y = year;
+
+  const h = String(hours).padStart(2, "0");
+  const min = String(minutes).padStart(2, "0");
+  const s = String(seconds).padStart(2, "0");
+
+  return `${d}/${m}/${y} ${h}:${min}:${s}`;
 }
 
 async function addExpense() {
@@ -64,9 +74,14 @@ function cancel() {
 }
 
 async function saveToDB(amount, desc, type, email) {
-  await supabaseClient
+  const { error } = await supabaseClient
     .from("expenses")
     .insert([{ amount, description: desc, type, user_email: email }]);
+
+  if (error) {
+    alert("Hata: " + error.message);
+    return;
+  }
 
   document.getElementById("undo").innerHTML = "Kaydedildi";
   document.getElementById("progress-container").style.display = "none";
@@ -75,10 +90,15 @@ async function saveToDB(amount, desc, type, email) {
 }
 
 async function loadExpenses() {
-  const { data } = await supabaseClient
+  const { data, error } = await supabaseClient
     .from("expenses")
     .select("*")
     .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error(error);
+    return;
+  }
 
   const incomeBody = document.querySelector("#income-table tbody");
   const expenseBody = document.querySelector("#expense-table tbody");

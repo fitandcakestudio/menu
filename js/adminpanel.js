@@ -1,4 +1,3 @@
-console.log("VERSION 999");
 const supabaseClient = supabase.createClient(
   "https://zjqormxrjvhvbmdfazej.supabase.co",
   "sb_publishable_OLNn50ApEwEeLZQk49u74A_Eue6jUfG"
@@ -11,29 +10,15 @@ let interval;
 function formatDateTR(dateString) {
   const date = new Date(dateString);
 
-  let hours = date.getUTCHours() + 3;
-  const minutes = date.getUTCMinutes();
-  const seconds = date.getUTCSeconds();
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
 
-  let day = date.getUTCDate();
-  let month = date.getUTCMonth() + 1;
-  let year = date.getUTCFullYear();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
 
-  // gün taşması kontrolü
-  if (hours >= 24) {
-    hours -= 24;
-    day += 1;
-  }
-
-  const d = String(day).padStart(2, "0");
-  const m = String(month).padStart(2, "0");
-  const y = year;
-
-  const h = String(hours).padStart(2, "0");
-  const min = String(minutes).padStart(2, "0");
-  const s = String(seconds).padStart(2, "0");
-
-  return `${d}/${m}/${y} ${h}:${min}:${s}`;
+  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }
 
 async function addExpense() {

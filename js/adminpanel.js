@@ -1,3 +1,4 @@
+<h1 style="color:red;">VERSION 2</h1>
 <!DOCTYPE html>
 <html lang="tr">
 <head>

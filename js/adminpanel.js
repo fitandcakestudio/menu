@@ -6,6 +6,22 @@ const supabaseClient = supabase.createClient(
 let timeout;
 let interval;
 
+// 🇹🇷 TARİH FORMAT FONKSİYONU
+function formatDateTR(dateString) {
+  const date = new Date(dateString);
+
+  return date.toLocaleString("tr-TR", {
+    timeZone: "Europe/Istanbul",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  });
+}
+
 async function addExpense() {
   const amount = document.getElementById("amount").value;
   const desc = document.getElementById("desc").value;
@@ -41,6 +57,7 @@ function cancel() {
   clearTimeout(timeout);
   clearInterval(interval);
   document.getElementById("undo").innerHTML = "İptal edildi";
+  document.getElementById("progress-container").style.display = "none";
 }
 
 async function saveToDB(amount, desc, type, email) {
@@ -74,7 +91,7 @@ async function loadExpenses() {
       <tr>
         <td>${e.amount} ₺</td>
         <td>${e.description}</td>
-        <td>${new Date(e.created_at).toLocaleString()}</td>
+        <td>${formatDateTR(e.created_at)}</td>
         <td>${e.user_email}</td>
       </tr>
     `;

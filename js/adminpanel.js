@@ -8,6 +8,8 @@ let interval;
 
 // 🇹🇷 TARİH FORMAT (UTC → TR +3 SAAT)
 function formatDateTR(dateString) {
+  alert("FORMAT ÇALIŞTI");
+
   const date = new Date(dateString);
 
   const day = String(date.getDate()).padStart(2, "0");

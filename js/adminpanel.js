@@ -1,34 +1,3 @@
-<h1 style="color:red;">VERSION 2</h1>
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<title>Admin Panel</title>
-</head>
-
-<body>
-
-<h2>Gider Ekle</h2>
-
-<input type="number" id="amount" placeholder="Tutar"><br><br>
-<input type="text" id="desc" placeholder="Açıklama"><br><br>
-
-<button onclick="addExpense()">Kaydet</button>
-
-<div id="undo"></div>
-
-<!-- PROGRESS BAR -->
-<div id="progress-container" style="width:100%; height:6px; background:#eee; margin-top:10px; display:none;">
-  <div id="progress-bar" style="width:0%; height:100%; background:#4caf50;"></div>
-</div>
-
-<h3>Kayıtlar</h3>
-<ul id="list"></ul>
-
-<!-- Supabase -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
 const supabaseClient = supabase.createClient(
   "https://zjqormxrjvhvbmdfazej.supabase.co",
   "sb_publishable_OLNn50ApEwEeLZQk49u74A_Eue6jUfG"
@@ -60,7 +29,6 @@ function addExpense() {
     const percent = (time / duration) * 100;
     progressBar.style.width = percent + "%";
 
-    // renk değişimi
     if (percent > 70) {
       progressBar.style.background = "#ff9800";
     }
@@ -117,7 +85,3 @@ async function loadExpenses() {
 }
 
 loadExpenses();
-</script>
-
-</body>
-</html>

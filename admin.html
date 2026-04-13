@@ -38,8 +38,8 @@ async function login() {
     console.log(error);
     document.getElementById("error").innerText = error.message;
   } else {
-    alert("Login başarılı");
-  }
+  window.location.href = "adminpanel.html";
+}
 }
 </script>
 

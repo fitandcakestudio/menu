@@ -8,17 +8,17 @@ let interval;
 
 // 🇹🇷 TARİH FORMAT (UTC → TR +3 SAAT)
 function formatDateTR(dateString) {
-  alert("FORMAT ÇALIŞTI");
+  const utc = new Date(dateString);
 
-  const date = new Date(dateString);
+  const tr = new Date(utc.getTime() + (3 * 60 * 60 * 1000));
 
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const year = date.getFullYear();
+  const day = String(tr.getUTCDate()).padStart(2, "0");
+  const month = String(tr.getUTCMonth() + 1).padStart(2, "0");
+  const year = tr.getUTCFullYear();
 
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
+  const hours = String(tr.getUTCHours()).padStart(2, "0");
+  const minutes = String(tr.getUTCMinutes()).padStart(2, "0");
+  const seconds = String(tr.getUTCSeconds()).padStart(2, "0");
 
   return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }

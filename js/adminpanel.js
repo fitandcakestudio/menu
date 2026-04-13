@@ -6,9 +6,13 @@ const supabaseClient = supabase.createClient(
 let timeout;
 let interval;
 
-function addExpense() {
+async function addExpense() {
   const amount = document.getElementById("amount").value;
   const desc = document.getElementById("desc").value;
+  const type = document.getElementById("type").value;
+
+  const { data: userData } = await supabaseClient.auth.getUser();
+  const email = userData.user.email;
 
   document.getElementById("undo").innerHTML =
     "Kaydediliyor... <button onclick='cancel()'>Undo</button>";
@@ -18,49 +22,31 @@ function addExpense() {
 
   progressContainer.style.display = "block";
   progressBar.style.width = "0%";
-  progressBar.style.background = "#4caf50";
 
   let time = 0;
-  const duration = 10000;
-  const step = 100;
+  const duration = 5000;
 
   interval = setInterval(() => {
-    time += step;
-    const percent = (time / duration) * 100;
-    progressBar.style.width = percent + "%";
-
-    if (percent > 70) {
-      progressBar.style.background = "#ff9800";
-    }
-    if (percent > 90) {
-      progressBar.style.background = "#f44336";
-    }
-  }, step);
+    time += 100;
+    progressBar.style.width = (time / duration) * 100 + "%";
+  }, 100);
 
   timeout = setTimeout(() => {
     clearInterval(interval);
-    progressBar.style.width = "100%";
-    saveToDB(amount, desc);
+    saveToDB(amount, desc, type, email);
   }, duration);
 }
 
 function cancel() {
   clearTimeout(timeout);
   clearInterval(interval);
-
   document.getElementById("undo").innerHTML = "İptal edildi";
-  document.getElementById("progress-container").style.display = "none";
 }
 
-async function saveToDB(amount, desc) {
-  const { data, error } = await supabaseClient
+async function saveToDB(amount, desc, type, email) {
+  await supabaseClient
     .from("expenses")
-    .insert([{ amount, description: desc }]);
-
-  if (error) {
-    alert("Hata: " + error.message);
-    return;
-  }
+    .insert([{ amount, description: desc, type, user_email: email }]);
 
   document.getElementById("undo").innerHTML = "Kaydedildi";
   document.getElementById("progress-container").style.display = "none";
@@ -74,14 +60,39 @@ async function loadExpenses() {
     .select("*")
     .order("created_at", { ascending: false });
 
-  const list = document.getElementById("list");
-  list.innerHTML = "";
+  const incomeBody = document.querySelector("#income-table tbody");
+  const expenseBody = document.querySelector("#expense-table tbody");
+
+  incomeBody.innerHTML = "";
+  expenseBody.innerHTML = "";
+
+  let incomeTotal = 0;
+  let expenseTotal = 0;
 
   data.forEach(e => {
-    const li = document.createElement("li");
-    li.innerText = `${e.amount} ₺ - ${e.description} (${e.created_at})`;
-    list.appendChild(li);
+    const row = `
+      <tr>
+        <td>${e.amount} ₺</td>
+        <td>${e.description}</td>
+        <td>${new Date(e.created_at).toLocaleString()}</td>
+        <td>${e.user_email}</td>
+      </tr>
+    `;
+
+    if (e.type === "income") {
+      incomeBody.innerHTML += row;
+      incomeTotal += Number(e.amount);
+    } else {
+      expenseBody.innerHTML += row;
+      expenseTotal += Number(e.amount);
+    }
   });
+
+  document.getElementById("income-total").innerText =
+    "Toplam Gelir: " + incomeTotal + " ₺";
+
+  document.getElementById("expense-total").innerText =
+    "Toplam Gider: " + expenseTotal + " ₺";
 }
 
 loadExpenses();

@@ -41,7 +41,7 @@ async function addExpense() {
   const email = userData.user.email;
 
   document.getElementById("undo").innerHTML =
-    "Kaydediliyor... <button onclick='cancel()'>Undo</button>";
+    "Kaydediliyor... <button class='undo-btn' onclick='cancel()'>Geri Al</button>";
 
   const progressContainer = document.getElementById("progress-container");
   const progressBar = document.getElementById("progress-bar");

@@ -2,26 +2,171 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Login</title>
+
+<style>
+
+/* 🔥 EN KRİTİK FIX (TAŞMA PROBLEMİ) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+/* Kart */
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.2s;
+}
+
+/* SHAKE */
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  display: block;
+}
+
+/* Checkbox fix */
+.remember input {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* Buton */
+button {
+  width: 100%;
+  padding: 14px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Remember me */
+.remember {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Hata */
+#error {
+  margin-top: 10px;
+  color: red;
+  min-height: 18px;
+}
+
+/* Mobil */
+@media (max-width: 480px) {
+  .container {
+    margin: 40px 16px;
+    padding: 16px;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-<h2>Admin Login</h2>
+<div class="container" id="loginBox">
 
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="password" id="password" placeholder="Şifre"><br><br>
+  <h2>Admin Login</h2>
 
-<button onclick="login()">Giriş Yap</button>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Şifre">
 
-<p id="error" style="color:red;"></p>
+  <div class="remember">
+    <input type="checkbox" id="rememberMe">
+    <label for="rememberMe">Beni hatırla</label>
+  </div>
+
+  <button onclick="handleLogin()">Giriş Yap</button>
+
+  <p id="error"></p>
+
+</div>
 
 <!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- SENİN JS -->
-<script src="/menu/js/admin.js?v=25"></script>
+<!-- 🔥 CACHE FIX (BUNU KORUDUM) -->
+<script src="/menu/js/admin.js?v=26"></script>
 
+<script>
+// Sayfa açılınca remember kontrol
+window.onload = () => {
+  const savedEmail = localStorage.getItem("remember_email");
+  if (savedEmail) {
+    document.getElementById("email").value = savedEmail;
+    document.getElementById("rememberMe").checked = true;
+  }
+};
+
+async function handleLogin() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const remember = document.getElementById("rememberMe").checked;
+  const errorBox = document.getElementById("error");
+  const box = document.getElementById("loginBox");
+
+  errorBox.innerText = "";
+
+  try {
+    await login(email, password);
+
+    if (remember) {
+      localStorage.setItem("remember_email", email);
+    } else {
+      localStorage.removeItem("remember_email");
+    }
+
+  } catch (err) {
+    errorBox.innerText = "Hatalı giriş";
+
+    box.classList.add("shake");
+    setTimeout(() => {
+      box.classList.remove("shake");
+    }, 300);
+  }
+}
+</script>
 
 </body>
 </html>

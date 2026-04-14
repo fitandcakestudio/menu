@@ -123,9 +123,7 @@ async function loadExpenses() {
       <tr>
         <td>${e.amount} ₺</td>
         <td>${e.description}</td>
-        <td>${new Date(e.created_at).toLocaleString("tr-TR", {
-          timeZone: "Europe/Istanbul"
-        })}</td>
+        <td>${new Date(e.created_at + "Z").toLocaleString("tr-TR")}</td>
         <td>${e.user_email}</td>
       </tr>
     `;

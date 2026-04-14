@@ -120,7 +120,7 @@ async function loadExpenses() {
       <tr>
         <td>${e.amount} ₺</td>
         <td>${e.description}</td>
-        <td>${formatDateTR(e.created_at)}</td>
+        <td>${new Date(e.created_at).toLocaleString("tr-TR")}</td>
         <td>${e.user_email}</td>
       </tr>
     `;

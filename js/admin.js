@@ -3,19 +3,16 @@ const supabaseClient = supabase.createClient(
   "sb_publishable_OLNn50ApEwEeLZQk49u74A_Eue6jUfG"
 );
 
-async function login() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
+async function login(email, password) {
   const { data, error } = await supabaseClient.auth.signInWithPassword({
     email,
     password
   });
 
   if (error) {
-    console.log(error);
-    document.getElementById("error").innerText = error.message;
-  } else {
-    window.location.href = "adminpanel.html";
+    throw error;
   }
+
+  window.location.href = "adminpanel.html";
+  return data;
 }

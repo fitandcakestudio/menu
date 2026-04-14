@@ -6,12 +6,12 @@ const supabaseClient = supabase.createClient(
 let timeout;
 let interval;
 
-// 🇹🇷 TARİH FORMAT (UTC → TR +3 SAAT)
+// ✅ DOĞRU TIMEZONE
 function formatDateTR(dateString) {
   const date = new Date(dateString);
 
   return date.toLocaleString("tr-TR", {
-    timeZone: "Istanbul",
+    timeZone: "Europe/Istanbul",
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
@@ -21,12 +21,21 @@ function formatDateTR(dateString) {
   });
 }
 
+// ✅ EKLEME
 async function addExpense() {
   const amount = document.getElementById("amount").value;
   const desc = document.getElementById("desc").value;
   const type = document.getElementById("type").value;
 
-  const { data: userData } = await supabaseClient.auth.getUser();
+  // 🔥 SESSION CHECK
+  const { data: userData, error: userError } =
+    await supabaseClient.auth.getUser();
+
+  if (userError || !userData?.user) {
+    alert("Session yok. Tekrar login ol.");
+    return;
+  }
+
   const email = userData.user.email;
 
   document.getElementById("undo").innerHTML =
@@ -39,7 +48,7 @@ async function addExpense() {
   progressBar.style.width = "0%";
 
   let time = 0;
-  const duration = 5000;
+  const duration = 3000;
 
   interval = setInterval(() => {
     time += 100;
@@ -52,6 +61,7 @@ async function addExpense() {
   }, duration);
 }
 
+// ✅ CANCEL
 function cancel() {
   clearTimeout(timeout);
   clearInterval(interval);
@@ -59,15 +69,22 @@ function cancel() {
   document.getElementById("progress-container").style.display = "none";
 }
 
+// ✅ DB KAYIT
 async function saveToDB(amount, desc, type, email) {
-  const { error } = await supabaseClient
+  console.log("SAVE ÇALIŞTI");
+
+  const { data, error } = await supabaseClient
     .from("expenses")
-    .insert([{ amount, description: desc, type, user_email: email }]);
+    .insert([{ amount, description: desc, type, user_email: email }])
+    .select();
 
   if (error) {
+    console.error(error);
     alert("Hata: " + error.message);
     return;
   }
+
+  console.log("INSERT OK:", data);
 
   document.getElementById("undo").innerHTML = "Kaydedildi";
   document.getElementById("progress-container").style.display = "none";
@@ -75,15 +92,17 @@ async function saveToDB(amount, desc, type, email) {
   loadExpenses();
 }
 
-
+// ✅ TABLO LOAD
 async function loadExpenses() {
+  console.log("LOAD ÇALIŞTI");
+
   const { data, error } = await supabaseClient
     .from("expenses")
     .select("*")
     .order("created_at", { ascending: false });
 
   if (error) {
-    console.error(error);
+    console.error("LOAD ERROR:", error);
     return;
   }
 

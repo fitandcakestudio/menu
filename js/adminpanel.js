@@ -7,6 +7,7 @@ let timeout;
 let interval;
 
 // ✅ DOĞRU TIMEZONE
+/*
 function formatDateTR(dateString) {
   const date = new Date(dateString);
 
@@ -20,6 +21,7 @@ function formatDateTR(dateString) {
     second: "2-digit"
   });
 }
+*/
 
 // ✅ EKLEME
 async function addExpense() {
@@ -106,6 +108,7 @@ async function loadExpenses() {
     return;
   }
 
+
   const incomeBody = document.querySelector("#income-table tbody");
   const expenseBody = document.querySelector("#expense-table tbody");
 
@@ -120,7 +123,9 @@ async function loadExpenses() {
       <tr>
         <td>${e.amount} ₺</td>
         <td>${e.description}</td>
-        <td>${new Date(e.created_at).toLocaleString("tr-TR")}</td>
+        <td>${new Date(e.created_at).toLocaleString("tr-TR", {
+          timeZone: "Europe/Istanbul"
+        })}</td>
         <td>${e.user_email}</td>
       </tr>
     `;

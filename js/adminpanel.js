@@ -8,19 +8,17 @@ let interval;
 
 // 🇹🇷 TARİH FORMAT (UTC → TR +3 SAAT)
 function formatDateTR(dateString) {
-  const utc = new Date(dateString);
+  const date = new Date(dateString);
 
-  const tr = new Date(utc.getTime() + (3 * 60 * 60 * 1000));
-
-  const day = String(tr.getUTCDate()).padStart(2, "0");
-  const month = String(tr.getUTCMonth() + 1).padStart(2, "0");
-  const year = tr.getUTCFullYear();
-
-  const hours = String(tr.getUTCHours()).padStart(2, "0");
-  const minutes = String(tr.getUTCMinutes()).padStart(2, "0");
-  const seconds = String(tr.getUTCSeconds()).padStart(2, "0");
-
-  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  return date.toLocaleString("tr-TR", {
+    timeZone: "Istanbul",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
 }
 
 async function addExpense() {

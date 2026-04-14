@@ -50,8 +50,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
-  display: block;
-  overflow-x: auto;
 }
 
 th, td {
@@ -63,6 +61,14 @@ th, td {
 
 th {
   background: #f5f5f5;
+}
+
+/* 🔥 TABLE WRAPPER (SCROLL) */
+.table-wrapper {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* TOTAL */
@@ -86,6 +92,9 @@ th {
     font-size: 12px;
   }
 
+  .table-wrapper {
+    max-height: 220px;
+  }
 }
 
 .undo-btn {
@@ -102,7 +111,6 @@ th {
 <h2>Gider / Gelir Ekle</h2>
 
 <input type="number" id="amount" placeholder="Tutar">
-
 <input type="text" id="desc" placeholder="Açıklama">
 
 <select id="type">
@@ -123,34 +131,42 @@ th {
 <!-- GELİR -->
 <div style="width:100%">
   <h3>GELİR TABLOSU</h3>
-  <table id="income-table">
-    <thead>
-      <tr>
-        <th>Tutar</th>
-        <th>Açıklama</th>
-        <th>Tarih</th>
-        <th>Düzenleyen</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+
+  <div class="table-wrapper">
+    <table id="income-table">
+      <thead>
+        <tr>
+          <th>Tutar</th>
+          <th>Açıklama</th>
+          <th>Tarih</th>
+          <th>Düzenleyen</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
   <div class="total" id="income-total"></div>
 </div>
 
 <!-- GİDER -->
 <div style="width:100%">
   <h3>GİDER TABLOSU</h3>
-  <table id="expense-table">
-    <thead>
-      <tr>
-        <th>Tutar</th>
-        <th>Açıklama</th>
-        <th>Tarih</th>
-        <th>Düzenleyen</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+
+  <div class="table-wrapper">
+    <table id="expense-table">
+      <thead>
+        <tr>
+          <th>Tutar</th>
+          <th>Açıklama</th>
+          <th>Tarih</th>
+          <th>Düzenleyen</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
   <div class="total" id="expense-total"></div>
 </div>
 
@@ -160,7 +176,7 @@ th {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <!-- JS -->
-<script src="/menu/js/adminpanel.js?v=29"></script>
+<script src="/menu/js/adminpanel.js?v=30"></script>
 
 </body>
 </html>

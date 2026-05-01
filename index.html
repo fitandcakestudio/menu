@@ -1,397 +1,426 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Menu | Fit &amp; Cake Studio</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:wght@400;500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#dcd6cc",
+                        "tertiary-fixed": "#fce0e0",
+                        background: "#faf5ee",
+                        "on-surface-variant": "#605850",
+                        "on-secondary-fixed": "#2a2420",
+                        "on-primary-fixed-variant": "#8a4518",
+                        "surface-container": "#f2ece4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#3a2020",
+                        "secondary-fixed": "#eae2da",
+                        "secondary-fixed-dim": "#cec6be",
+                        primary: "#c2652a",
+                        secondary: "#78706a",
+                        "primary-container": "#e08850",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#3a302a",
+                        "on-tertiary-fixed-variant": "#6e3030",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        outline: "#9a9088",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#fbe8d8",
+                        "tertiary-fixed-dim": "#e8a0a0",
+                        "tertiary-container": "#d47070",
+                        "secondary-container": "#eae2da",
+                        "on-error-container": "#7a1a10",
+                        "on-secondary-container": "#605850",
+                        tertiary: "#8c3c3c",
+                        "on-primary-fixed": "#401a08",
+                        "surface-container-high": "#ece6dc",
+                        "surface-tint": "#c2652a",
+                        "surface-container-low": "#f6f0e8",
+                        "on-surface": "#3a302a",
+                        error: "#c0392b",
+                        "error-container": "#fce4e0",
+                        "surface-bright": "#faf5ee",
+                        "surface-container-highest": "#e6e0d6",
+                        "on-tertiary-fixed": "#2e1515",
+                        "surface-variant": "#ece6dc",
+                        surface: "#faf5ee",
+                        "inverse-on-surface": "#faf5ee",
+                        "inverse-surface": "#3a302a",
+                        "primary-fixed-dim": "#f0a878",
+                        "inverse-primary": "#f0a878",
+                        "outline-variant": "#d8d0c8",
+                        "on-primary-container": "#fbe8d8",
+                        "on-secondary-fixed-variant": "#504840"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "margin-page": "64px",
+                        gutter: "24px",
+                        "stack-sm": "16px"
+                    },
+                    fontFamily: {
+                        h3: ["Noto Serif"],
+                        h1: ["Noto Serif"],
+                        h2: ["Noto Serif"],
+                        price: ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        headline: ["Eb Garamond"],
+                        display: ["Eb Garamond"],
+                        body: ["Manrope"],
+                        label: ["Manrope"]
+                    },
+                    fontSize: {
+                        h3: ["24px", {lineHeight: "1.4", fontWeight: "500"}],
+                        h1: ["48px", {lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "600"}],
+                        h2: ["32px", {lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "500"}],
+                        price: ["20px", {lineHeight: "1", fontWeight: "600"}],
+                        "body-lg": ["18px", {lineHeight: "1.6", fontWeight: "400"}],
+                        "label-caps": ["12px", {lineHeight: "1", letterSpacing: "0.05em", fontWeight: "700"}],
+                        "body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}]
+                    }
+                }
+            }
+        };
+    </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        html { scroll-behavior: smooth; }
+        body { background-color: #fcf9f4; }
     </style>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "tertiary-fixed": "#ffdad4",
-                      "primary-container": "#8da399",
-                      "surface-container-low": "#f6f3ee",
-                      "background": "#fcf9f4",
-                      "on-surface": "#1c1c19",
-                      "on-secondary-container": "#783d1e",
-                      "outline": "#727875",
-                      "surface-container": "#f0ede8",
-                      "secondary-fixed-dim": "#ffb693",
-                      "on-primary-container": "#263932",
-                      "surface-dim": "#dcdad5",
-                      "on-secondary-fixed": "#351000",
-                      "on-error": "#ffffff",
-                      "primary-fixed-dim": "#b5ccc1",
-                      "on-primary-fixed": "#0b1f18",
-                      "on-primary-fixed-variant": "#374b43",
-                      "inverse-surface": "#31302d",
-                      "on-primary": "#ffffff",
-                      "on-surface-variant": "#424845",
-                      "outline-variant": "#c2c8c4",
-                      "on-tertiary-fixed": "#2b1613",
-                      "surface-tint": "#4e635a",
-                      "on-tertiary": "#ffffff",
-                      "secondary": "#8d4e2d",
-                      "error-container": "#ffdad6",
-                      "tertiary": "#745853",
-                      "primary": "#4e635a",
-                      "on-tertiary-container": "#472f2b",
-                      "surface-bright": "#fcf9f4",
-                      "tertiary-fixed-dim": "#e3beb8",
-                      "surface-container-lowest": "#ffffff",
-                      "secondary-fixed": "#ffdbcc",
-                      "tertiary-container": "#b89690",
-                      "surface-container-high": "#ebe8e3",
-                      "secondary-container": "#fdaa83",
-                      "on-secondary-fixed-variant": "#703718",
-                      "surface-container-highest": "#e5e2dd",
-                      "on-error-container": "#93000a",
-                      "on-secondary": "#ffffff",
-                      "on-background": "#1c1c19",
-                      "on-tertiary-fixed-variant": "#5b403c",
-                      "surface-variant": "#e5e2dd",
-                      "inverse-on-surface": "#f3f0eb",
-                      "primary-fixed": "#d1e8dd",
-                      "surface": "#fcf9f4",
-                      "inverse-primary": "#b5ccc1",
-                      "error": "#ba1a1a"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "margin-page": "64px",
-                      "gutter": "24px",
-                      "stack-lg": "64px",
-                      "stack-md": "32px",
-                      "stack-sm": "16px",
-                      "unit": "8px"
-              },
-              "fontFamily": {
-                      "h1": ["Noto Serif"],
-                      "body-md": ["Be Vietnam Pro"],
-                      "body-lg": ["Be Vietnam Pro"],
-                      "h2": ["Noto Serif"],
-                      "price": ["Be Vietnam Pro"],
-                      "h3": ["Noto Serif"],
-                      "label-caps": ["Be Vietnam Pro"]
-              },
-              "fontSize": {
-                      "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                      "price": ["20px", {"lineHeight": "1", "fontWeight": "600"}],
-                      "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}]
-              }
-            },
-          },
-        }
-    </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+</head>
+<body class="font-body-md text-on-surface">
 <!-- TopAppBar -->
-<header class="bg-[#fdfbf7] dark:bg-stone-950 docked full-width top-0 border-b border-stone-100 dark:border-stone-900 shadow-sm shadow-[#3E2723]/5 flex justify-between items-center w-full px-6 py-4 sticky z-50">
+<header class="w-full h-16 sticky top-0 z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-900 shadow-sm flex justify-between items-center px-6 md:pl-72">
 <div class="flex items-center gap-4">
-<button aria-label="Open menu" class="text-[#8DA399] dark:text-[#a3b5ad] hover:opacity-80 transition-opacity active:scale-95 duration-150 md:hidden">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-<h1 class="text-2xl font-serif italic text-[#3E2723] dark:text-[#fdfbf7]">Fit &amp; Cake Studio</h1>
+<span class="text-xl font-bold italic text-[#3E2723] dark:text-[#FDFBF9] font-h2">Fit &amp; Cake Studio</span>
 </div>
-<div class="hidden md:flex gap-8">
-<a class="text-[#8DA399] font-semibold font-noto-serif text-sm tracking-tight uppercase hover:opacity-80 transition-opacity" href="#">Menu</a>
-<a class="text-stone-500 font-noto-serif text-sm tracking-tight uppercase hover:opacity-80 transition-opacity" href="#">Our Philosophy</a>
-<a class="text-stone-500 font-noto-serif text-sm tracking-tight uppercase hover:opacity-80 transition-opacity" href="#">Ingredients</a>
-</div>
-<button class="text-[#8DA399] dark:text-[#a3b5ad] hover:opacity-80 transition-opacity active:scale-95 duration-150">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
 </header>
-<div class="flex max-w-[1440px] mx-auto min-h-screen">
-<!-- Sidebar Navigation (Desktop) / NavigationDrawer -->
-<aside class="hidden md:block fixed left-0 top-18 h-[calc(100vh-72px)] w-72 bg-[#fdfbf7] dark:bg-stone-900 shadow-2xl shadow-[#3E2723]/10 border-r border-stone-100 dark:border-stone-800 p-6 overflow-y-auto z-40">
-<h2 class="text-xl font-bold text-[#3E2723] dark:text-[#fdfbf7] font-noto-serif mb-6">Menu Categories</h2>
-<nav class="space-y-2">
-<a class="flex items-center gap-3 p-3 bg-[#8DA399]/10 text-[#8DA399] rounded-lg font-bold transition-all duration-300 hover:pl-4" href="#Artisan Breads">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen z-40 hidden md:flex flex-col py-8 px-6 bg-[#FDFBF9] dark:bg-stone-950 w-64 border-r border-stone-200/60 dark:border-stone-800/60 shadow-[4px_0_24px_rgba(62,39,35,0.05)] font-noto-serif antialiased text-stone-800 dark:text-stone-200">
+<div class="mb-10">
+<div class="text-2xl font-bold text-[#3E2723] dark:text-[#FDFBF9] tracking-tight mb-1">Fit &amp; Cake</div>
+<div class="text-xs uppercase tracking-widest text-[#8DA399] font-semibold">Artisanal Healthy Bakery</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto pr-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#8DA399] font-semibold border-r-4 border-[#8DA399] bg-[#8DA399]/5 transition-colors duration-300" href="#tatlilar">
 <span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
-<span class="font-noto-serif text-sm font-medium">Artisan Breads</span>
+<span class="">Tatlılar</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-lg transition-all duration-300 hover:pl-4" href="#Signature Cakes">
-<span class="material-symbols-outlined" data-icon="cake">cake</span>
-<span class="font-noto-serif text-sm font-medium">Signature Cakes</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#3E2723] dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-300" href="#sandvicler">
+<span class="material-symbols-outlined" data-icon="lunch_dining">lunch_dining</span>
+<span class="">Sandviçler</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-lg transition-all duration-300 hover:pl-4" href="#Healthy Bowls">
-<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
-<span class="font-noto-serif text-sm font-medium">Healthy Bowls</span>
+<div class="pt-4 pb-2">
+<div class="flex items-center gap-3 px-4 py-2 text-xs font-bold uppercase tracking-widest text-stone-400">
+                    Şeker İlavesiz Tatlılar
+                </div>
+<div class="space-y-1 pl-4">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#3E2723] dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-300 text-sm" href="#kahvaltiliklar">
+<span class="material-symbols-outlined text-lg" data-icon="nutrition">nutrition</span>
+<span class="">Kahvaltılıklar</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-lg transition-all duration-300 hover:pl-4" href="#Pastries">
-<span class="material-symbols-outlined" data-icon="croissant">toast</span>
-<span class="font-noto-serif text-sm font-medium">Pastries</span>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#3E2723] dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-300 text-sm" href="#cheesecake-cup">
+<span class="material-symbols-outlined text-lg" data-icon="cookie">cookie</span>
+<span class="">Yulaflı Cheesecake Cup</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-lg transition-all duration-300 hover:pl-4" href="#Beverages">
-<span class="material-symbols-outlined" data-icon="local_cafe">local_cafe</span>
-<span class="font-noto-serif text-sm font-medium">Beverages</span>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#3E2723] dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-300 text-sm" href="#atistirmaliklar">
+<span class="material-symbols-outlined text-lg" data-icon="coffee">coffee</span>
+<span class="">Atıştırmalıklar</span>
 </a>
-<a class="flex items-center gap-3 p-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-lg transition-all duration-300 hover:pl-4" href="#Fit Treats">
-<span class="material-symbols-outlined" data-icon="nutrition">nutrition</span>
-<span class="font-noto-serif text-sm font-medium">Fit Treats</span>
-</a>
-<a class="flex items-center gap-3 p-3 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-lg transition-all duration-300 hover:pl-4" href="#Sugar-Free">
-<span class="material-symbols-outlined" data-icon="ice_skating">ice_skating</span>
-<span class="font-noto-serif text-sm font-medium">Sugar-Free</span>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-stone-500 dark:text-stone-400 hover:text-[#3E2723] dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-colors duration-300" href="#bowl">
+<span class="material-symbols-outlined" data-icon="fitness_center">fitness_center</span>
+<span class="">Bowl</span>
 </a>
 </nav>
 </aside>
-<!-- Main Content Canvas -->
-<main class="w-full md:ml-72 flex-1 px-6 md:px-12 py-12">
+<!-- Main Content Area -->
+<main class="md:pl-64 min-h-screen">
+<div class="max-w-7xl mx-auto px-margin-page py-stack-lg">
 <!-- Hero Section -->
-<section class="mb-16">
-<div class="relative h-[400px] rounded-3xl overflow-hidden mb-8 shadow-xl shadow-primary-container/10">
-<img class="w-full h-full object-cover" data-alt="A professional top-down culinary photograph of a beautifully arranged selection of artisanal sourdough breads and delicate sugar-free pastries on a light linen tablecloth. The lighting is soft and natural, coming from a side window, highlighting the rustic textures and organic shapes. The color palette is composed of warm beiges, soft creams, and accents of sage green herbs. The mood is serene and boutique, emphasizing high-quality craftsmanship and healthy indulgence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlQtkCaTClfIKP4V_NzvK-3iADpsVsc3XKepCjk7POvIogB-kKmG_PANNjBQDVCDcXOCj439b4EZu5vXuDQCkwMUZfqiU7LpcDCw8Tg2XL3zxXOab-v5BMcqIAjgQRg6iYe4h65H-N-LMNhKAhCKCkPvpBgFGv3s5eO2ba-G93HeZ8351b3qBL0dN-XiEjicB4mDjpXdTzoIYS20794Ip1XUefq5XmPIT-ewH8CsmanpQwi8ZzW_Ng93JiWjQcsqY4HL5ACMmmRAqy"/>
-<div class="absolute inset-0 bg-gradient-to-t from-[#3E2723]/60 to-transparent flex items-end p-12">
-<div>
-<span class="text-white font-label-caps tracking-widest mb-4 block">HANDCRAFTED WELLNESS</span>
-<h2 class="text-white font-h1 text-h1 max-w-2xl">Fuel your body, indulge your spirit.</h2>
-</div>
-</div>
+<section class="mb-stack-lg relative overflow-hidden rounded-3xl h-[400px] flex items-center px-12 text-white">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A high-end editorial shot of freshly baked sourdough loaves and artistic cakes on a rustic wooden table. The lighting is warm and golden, casting soft shadows. The composition is clean and minimalist, highlighting the organic textures of the flour-dusted bread and the delicate glaze of the cakes, set against a backdrop of soft sage green walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaRKO2uRgIHYy2JQDgWUrtc6-nFlO1nWb_Icx1FB4l1Al1xxHyIQTZZxYGlcKU9WAmBhU14uOk4EzdJa2fk_pWMLkBR1-aG6vE1Ce69Ak_6G-iO4gKXwDHKwrqvD0ynT_d6HDq32eXhftpqWfSH0eTLIBXYE16BTmX2ScRkgeUlSnhhxeu2TvIYwGdMC_-iBm6I9BlwQj0X8Ovo_CH9LYlRV7v8O92tX66unPXKtgxxKjA_UJ7uJMWDLkFuus7rnwkLZztp_f8itgZ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#3E2723]/60 to-transparent"></div>
+<div class="relative z-10 max-w-xl">
+<h1 class="font-h1 text-h1 mb-4 leading-tight">Nourishment for the Soul and Body</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-8">Handcrafted with organic grains, natural sweeteners, and a devotion to the art of the bake.</p>
 </div>
 </section>
-<!-- Menu Sections -->
-<div class="space-y-stack-lg">
-<!-- Artisan Breads -->
-<section class="scroll-mt-24" id="Artisan Breads">
-<div class="flex items-center gap-4 mb-8">
-<h3 class="font-h2 text-h2 text-[#3E2723]">Artisan Breads</h3>
-<div class="h-[1px] flex-1 bg-stone-200"></div>
+<!-- Tatlılar Section -->
+<section class="mb-stack-lg" id="tatlilar">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-h2 text-h2 text-secondary">Tatlılar</h2>
+<span class="h-px flex-1 mx-8 bg-outline-variant"></span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<!-- Product Card 1 -->
-<div class="group bg-surface-container-low rounded-3xl overflow-hidden shadow-sm shadow-[#3E2723]/5 hover:shadow-md transition-shadow">
-<div class="aspect-[4/3] overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of a freshly baked sourdough loaf with a perfectly crackled, golden-brown crust. The bread sits on a minimalist ceramic plate in a bright, airy studio setting with soft morning light. A few crumbs are scattered artistically around the base. The aesthetic is clean and high-end, focusing on the rustic texture and artisanal quality of the grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn8ZfStn-vgbE_Lm2d8betO_taOIWa5lGK79mSnE5kAMWUg6EHM3Hv8yDQ1uBbcujIQJKKoM2yje_RjRxE89MCvIpuB61myy-hfnXzOqB9Wr7qgRZxL3ihLf4Mh-Sz2cW-89IjKmQ4kdyIaeVPdV5jB-tVVjiXFLDZpCfX1qFxuc5kmDWvqzF-OkHD_qmiZEIJUdkRQZuA37D7z-vLxfkijFwuxORGICAjOXLPXA3u3JildDEzGDMIYkIMfJF_JrIw1DCuuniOooXc"/>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Product Card -->
+<div class="bg-surface-container-low rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(62,39,35,0.05)] hover:shadow-[0_8px_30px_rgb(62,39,35,0.1)] transition-all duration-300 flex flex-col sm:flex-row h-full">
+<div class="sm:w-2/5 relative">
+<img class="h-full w-full object-cover" data-alt="A detailed close-up of a crusty artisanal sourdough bread loaf. The crust is deeply caramelized with beautiful scoring patterns. It sits on a linen cloth in a bright, airy kitchen setting with soft morning light illuminating the fine dusting of flour on its surface. The aesthetic is organic and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC8Cu3oRBFztTAEce3OxsR-WdK913Mox5uVyEjJFBW0I765VI5p2lu-dP_xSDowAfmEQuDVxejCGgzW41Nr4ceocl0qiNGVa6Abs0NERv1yupncFy1YRN3YgwyY22SXlvZKZo0hKc6nuwISNgccCU84-ZlWh_Mtq4mwPEMcnj-MqYo-mM6L7svPCwEkRpuXbVqzqzzwP_S_sjj1VlspoXGfnFfCwN6xzgyFBcAha7lrO8jp4cEJRw5V-qUEGZEMZe6p-pA-WmDVe5c"/>
 </div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-h3 text-h3 text-[#3E2723]">Sourdough Loaf</h4>
-<span class="font-price text-price text-primary">$12.00</span>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-caps text-[10px]">Vegan</span>
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-caps text-[10px]">High Fiber</span>
 </div>
-<p class="text-on-surface-variant font-body-md mb-4">36-hour slow fermentation using organic stone-ground flour. High in probiotics and easy on digestion.</p>
-<div class="flex gap-2">
-<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-bold uppercase tracking-wider">Vegan</span>
-<span class="px-3 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-xs font-bold uppercase tracking-wider">Organic</span>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Signature Sourdough</h3>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">72-hour cold fermented loaf made with heritage grains and sea salt. Crisp crust with a light, tangy interior.</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<span class="font-price text-price text-secondary">$12.00</span>
 </div>
 </div>
 </div>
 <!-- Product Card 2 -->
-<div class="group bg-surface-container-low rounded-3xl overflow-hidden shadow-sm shadow-[#3E2723]/5 hover:shadow-md transition-shadow">
-<div class="aspect-[4/3] overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A dark, dense walnut rye bread sliced to show the rich texture and whole walnut halves embedded within. The bread is presented on a dark wooden cutting board against a neutral beige background. The lighting is moody and focused, highlighting the deep chocolate tones of the crust and the earthy textures. It evokes a sense of nutritional density and traditional European baking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNyjlFo7KXSYRVQvu7evz1afhhnAq6fCT26-B_x7dXi4gY9xRi6x1MRl0HtvZOq63nY8uFvh1Bs4XT3HL1PsCioQl3FMZG9YEkjJl8ryknbaWDSTGjseIyGGy1qDg9AU_J0L9X_Po1vBItUv8pyCQhfkStAX0Fz41NQMes2PKAqrvP2dy_VXsfIMbfhygAx0mEywDfwnKG74qvsnQusz4gsDihbEcLXypk4f1FxvdXqIruOL9qnaJL0OhwiFoH5ROvebS-NOy-lR7i"/>
+<div class="bg-surface-container-low rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(62,39,35,0.05)] hover:shadow-[0_8px_30px_rgb(62,39,35,0.1)] transition-all duration-300 flex flex-col sm:flex-row h-full">
+<div class="sm:w-2/5 relative">
+<img class="h-full w-full object-cover" data-alt="Loaf of dark, dense rye bread topped with a heavy coating of sunflower and pumpkin seeds. The bread is presented on a minimalist stone surface with a soft, warm background palette of beige and terracotta. Professional culinary photography with shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLDuezI-At36K_XoCp-hK3-PXm2YPmbildHgjpJomeVbwYLwrtIMJJkzyDI2sjo257M_CR95z4SbyAUkBWIYJqZnxQKmFo60lP8IS6RW9Assm_4t0sRSXA-M72knjZDPXl12EcRQE8Tesrad6E0mYzocPgzToZOBNNJNsZisbJBOBhDLilo4TiUR190cn5q33Xb0cYamH70uIYLZdYXII3s6GjRI6Kre1ImHs-qXXpvVXAUX37obtwvy4rAtowC4nZNSZPL9i8XVc6"/>
 </div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-h3 text-h3 text-[#3E2723]">Walnut Rye</h4>
-<span class="font-price text-price text-primary">$14.50</span>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-caps text-[10px]">Keto</span>
+<span class="px-3 py-1 rounded-full bg-secondary/10 text-secondary font-label-caps text-[10px]">Ancient Grains</span>
 </div>
-<p class="text-on-surface-variant font-body-md mb-4">Dense, nutrient-packed rye with activated walnuts and a hint of wildflower honey.</p>
-<div class="flex gap-2">
-<span class="px-3 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded-full text-xs font-bold uppercase tracking-wider">Fiber Rich</span>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Seeded Rye</h3>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Densely packed with organic pumpkin seeds, sunflower seeds, and cracked rye. Low glycemic index.</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<span class="font-price text-price text-secondary">$14.50</span>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Signature Cakes -->
-<section class="scroll-mt-24" id="Signature Cakes">
-<div class="flex items-center gap-4 mb-8">
-<h3 class="font-h2 text-h2 text-[#3E2723]">Signature Cakes</h3>
-<div class="h-[1px] flex-1 bg-stone-200"></div>
+<!-- Sandviçler Section -->
+<section class="mb-stack-lg" id="sandvicler">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-h2 text-h2 text-secondary">Sandviçler</h2>
+<span class="h-px flex-1 mx-8 bg-outline-variant"></span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Cake Item -->
+<div class="bg-surface-container-low rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A minimalist, elegant matcha green tea cake with smooth, velvety frosting. The cake is decorated with tiny edible white flowers and sits on a handcrafted ceramic plate. The lighting is soft and diffused, highlighting the vibrant sage green color of the matcha against a creamy beige background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcGBDASJoTkj3R4BfaYrxYTiMhj52WdwSbVDnzQXZ-SnYOGUi_SmnjR-dTugXvCrTYo_f_uyfwcBu_14hhxr9popoZGF10yeWS_vh9HU1vjAMq6ikNJpNrF7bpJMFou0zXlJ-8YBlEhMmDtmBpCHxBtkMBbn4uA_3cJcLhWpRq1dSHOzDfg7ApnIeUksseaCOc6ZAiPDqLFypxQw6lXxV9iYaZIx1d2qVgkrQqdndyw6O4yh_ut1xARyK8UprdeQ8DxxpViaryqKzu"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-on-background">Matcha Zen Cake</h3>
+<span class="font-price text-secondary">$55</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Organic ceremonial matcha sponge layered with light honey-infused cream. No refined sugar.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 border border-outline-variant rounded-full text-[10px] font-label-caps">Gluten-Free</span>
+<span class="px-2 py-0.5 border border-outline-variant rounded-full text-[10px] font-label-caps">Low Sugar</span>
+</div>
+</div>
+</div>
+<!-- Cake Item 2 -->
+<div class="bg-surface-container-low rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A decadent dark chocolate cake made with 85% cacao, topped with fresh raspberries and a dusting of cocoa powder. The texture is rich and fudgy. Photographed with a sophisticated, dark moody lighting that emphasizes the deep browns and vibrant reds of the berries. High-end gourmet dessert aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPOAAY6buXluw8ELURpYAy4VC1X1S9Az8MWEOoRVu9XzgWlXLOmg_haNhVP6tcTmfL3XYP5QXfyT5hhr6VCq3yoLVub48osqtPkeoPmcAArvGDqWRYEaH6923jypFM3lfyebfheNTB_W2Ocl6LqQ80R1oXs-HQg7n92V-qJptyNEVstznlpKOY_PSMebdMVub4vUszi594ZxXX9QiT2DBOw-aDqPQbRzJTeUCu-SVto-bDHdztFyzED1jwH_6Qx2D0_CIhU900j3l4"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-on-background">Dark Velvet</h3>
+<span class="font-price text-secondary">$62</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">85% dark cacao flourless cake, sweetened with dates. Rich, decadent, and completely guilt-free.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 border border-outline-variant rounded-full text-[10px] font-label-caps">Paleo</span>
+<span class="px-2 py-0.5 border border-outline-variant rounded-full text-[10px] font-label-caps">Vegan</span>
+</div>
+</div>
+</div>
+<!-- Cake Item 3 -->
+<div class="bg-surface-container-low rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A rustic carrot cake with a smooth, whipped cream cheese frosting alternatives. Garnished with crushed walnuts and orange zest. The cake sits on a vintage wooden cake stand in a bright, sun-drenched studio. The aesthetic is artisanal, wholesome, and inviting with earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCngfZH9M6QrC2KrptIjeDCWaWCzwhBPpBOHnnnm-i1Tc81R43SXsOvv5KLlMYjiKOz0JQBKefrZiSKSc7k1aGsrX6a5w47QftwCE_dOMyG2MhvxVDltRUYV4Vnmr9ZZC7tgUjwnwQ_tzDvORF6a_1YtOHi5NiuOZQE114U6zQDUcGcRk1KB4qNZE-MBnIXPoalduESbbSWznfmgEPPL5n2mzm02w3hkQyWuf6-MYDq9C1Z9pO7wqlqoVDu0uCSmI22R3uHsvKWWaKC"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h3 text-h3 text-on-background">Harvest Carrot</h3>
+<span class="font-price text-secondary">$48</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">Shredded organic carrots, walnuts, and spice. Frosted with a light cashew cream frosting.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 border border-outline-variant rounded-full text-[10px] font-label-caps">Dairy-Free</span>
+<span class="px-2 py-0.5 border border-outline-variant rounded-full text-[10px] font-label-caps">Whole Grain</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Şeker İlavesiz Tatlılar Sections -->
+<div class="mb-stack-lg">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-h2 text-h2 text-secondary">Şeker İlavesiz Tatlılar</h2>
+<span class="h-px flex-1 mx-8 bg-outline-variant"></span>
+</div>
+<!-- Sub-category: Kahvaltılıklar -->
+<div class="mb-12" id="kahvaltiliklar">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">nutrition</span>
+<h3 class="font-h3 text-xl text-on-background">Kahvaltılıklar</h3>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="group bg-surface-container-low rounded-3xl overflow-hidden shadow-sm shadow-[#3E2723]/5">
-<div class="aspect-[4/3] overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist matcha cloud cake with a vibrant green dusting on top, sitting on a pristine white marble surface. The cake has a light, ethereal texture, appearing almost weightless. A single small mint leaf rests on top. The background is a soft, out-of-focus sage green, creating a harmonious and serene aesthetic that suggests a light, healthy dessert choice." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIA_-zqNodcwT6jwz1IJ4q5aG_ZxX3tWNELWjFYG-XdBff0H8TyvfDdhuaUJdpHhYvc0o1mdFy005Uke2sYhc9oQmNh0ONIxW7hcvHa40MmcQD_snlZylNXlct9-9oAIqlX9R-MLtn4eZANKN69uczG52kIf1A4hn6tZq6fnqHfBvltcwycWa91N9lwdSpk9RwElMcNoV3C_O9D6m-Pw0bN9U3uL7s_5FpurQC8ZMaPayzVAx0UvaKweJOdogHqmLUDk_fz0_cYFIo"/>
+<div class="bg-surface-container-low rounded-3xl p-6 flex items-center gap-6 shadow-sm">
+<div class="w-1/3 aspect-square rounded-2xl overflow-hidden bg-surface-variant">
+<img alt="Granola Bowl" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ979bQ49SY1gcMlXy7S3K5Pf9_Cj60mZzOuoeX3LD3uuVWxWgbTyTkxBFxliH5PfB920QDl1jLIIHR7SLSWqQ1JAcOqOB-SKcOpE6R0vtoCKWylS7DULqqe7WawbZP4BUuCinY8dErGjmv_VqnQx8Xe0is3uBU0is-8w4e3x09o_90_7B9mBbm-qI5H3A-V4OONws3uSGyxoHNkpnr4LnGbjuiH9KlGa2JvfYpjVzCB8LDRQ6Zv7rcEYPDKEyJY_emjD1FHrwkgDp"/>
 </div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-h3 text-h3 text-[#3E2723]">Matcha Cloud</h4>
-<span class="font-price text-price text-primary">$55.00</span>
-</div>
-<p class="text-on-surface-variant font-body-md mb-4">Ceremonial grade matcha mousse layered over a light almond sponge. Naturally sweetened with monk fruit.</p>
-<div class="flex gap-2">
-<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-bold uppercase tracking-wider">Keto Friendly</span>
-</div>
-</div>
-</div>
-<div class="group bg-surface-container-low rounded-3xl overflow-hidden shadow-sm shadow-[#3E2723]/5">
-<div class="aspect-[4/3] overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A decadent but healthy velvet cacao cake, featuring rich dark chocolate layers and a smooth, matte finish. The cake is decorated with a few freeze-dried raspberries and a light dusting of cocoa powder. It is set against a warm, deep chocolate-colored background, emphasizing its richness. The overall mood is luxurious and indulgent yet health-conscious through its ingredient purity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcNcDlXLGovT3ZfG1c7zCs8fQZrdbGy9whfRVXoOaDSZbUOoJFQnOV8ovBQvukWkoIpXwnD7FBzGqc8nOpP3ALsrYSvZqCea6MfI4RYRgc8m8oIOjGPToAzv5daNhesISayUf7p69klPRGlSrPNUT5QOS4hrsvcelEK1KYiELKlVNhLCWgb5fnF1Np4uCaXD_HdE3jpTwzw2YlewBgGYdCctBeUh_AxEJQymIwtB3aYKoTYJpbvHXbtcL3sBJKcM7lE513RJH84F6"/>
-</div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-h3 text-h3 text-[#3E2723]">Velvet Cacao</h4>
-<span class="font-price text-price text-primary">$58.00</span>
-</div>
-<p class="text-on-surface-variant font-body-md mb-4">85% dark Belgian chocolate and avocado ganache. Completely flourless and rich in healthy fats.</p>
-<div class="flex gap-2">
-<span class="px-3 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded-full text-xs font-bold uppercase tracking-wider">Gluten-Free</span>
+<div class="w-2/3">
+<h4 class="font-h3 text-lg mb-1">Ev Yapımı Granola</h4>
+<p class="text-sm text-on-surface-variant mb-2">Hurma ile tatlandırılmış, bol kuruyemişli.</p>
+<span class="font-price text-secondary">$14.00</span>
 </div>
 </div>
 </div>
 </div>
-</section>
-<!-- Healthy Bowls -->
-<section class="scroll-mt-24" id="Healthy Bowls">
-<div class="flex items-center gap-4 mb-8">
-<h3 class="font-h2 text-h2 text-[#3E2723]">Healthy Bowls</h3>
-<div class="h-[1px] flex-1 bg-stone-200"></div>
+<!-- Sub-category: Yulaflı Cheesecake Cup -->
+<div class="mb-12" id="cheesecake-cup">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">cookie</span>
+<h3 class="font-h3 text-xl text-on-background">Yulaflı Cheesecake Cup</h3>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-<div class="group bg-surface-container-low rounded-3xl overflow-hidden shadow-sm shadow-[#3E2723]/5">
-<div class="aspect-[4/3] overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant harvest quinoa bowl filled with roasted sweet potatoes, fresh kale, pomegranate seeds, and a drizzle of tahini dressing. The bowl is made of handmade ceramic with a soft matte finish, resting on a textured linen placemat. The lighting is bright and cheerful, celebrating the variety of colors and textures in the fresh, whole-food ingredients. The aesthetic is clean and energizing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCguUQtIgnaywQHv9SeIW9TMmjeOIEYSHgohqQ5X7Oosn5aHLBDPgrA-92L6ppsTDsGaByEAYHeX-ENCWklgLGubCVi_Le992DAzIYuGd94nxPjDDtwoJiy4xXCoXpbRox3FStlSbTMSCdr4pZeP0nu0XUG821IhU1cdUJylAhuaVpqhUiSpa8ZSjtTAY0QV74-cufTj7dK9jtdeWaJ1wkOG6a4ClF3huPjpnqTbv7of_s4vjcOiLcvP6_xyaWklUUO8XQ2R6KOJ2yX"/>
+<div class="bg-surface-container-low rounded-3xl p-6 flex items-center gap-6 shadow-sm">
+<div class="w-1/3 aspect-square rounded-2xl overflow-hidden bg-surface-variant">
+<img alt="Cheesecake Cup" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcGBDASJoTkj3R4BfaYrxYTiMhj52WdwSbVDnzQXZ-SnYOGUi_SmnjR-dTugXvCrTYo_f_uyfwcBu_14hhxr9popoZGF10yeWS_vh9HU1vjAMq6ikNJpNrF7bpJMFou0zXlJ-8YBlEhMmDtmBpCHxBtkMBbn4uA_3cJcLhWpRq1dSHOzDfg7ApnIeUksseaCOc6ZAiPDqLFypxQw6lXxV9iYaZIx1d2qVgkrQqdndyw6O4yh_ut1xARyK8UprdeQ8DxxpViaryqKzu"/>
 </div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-h3 text-h3 text-[#3E2723]">Harvest Quinoa</h4>
-<span class="font-price text-price text-primary">$16.50</span>
-</div>
-<p class="text-on-surface-variant font-body-md mb-4">Red and white quinoa, roasted autumn squash, kale, and a house-made lemon herb vinaigrette.</p>
-<div class="flex gap-2">
-<span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-bold uppercase tracking-wider">Plant-Based</span>
+<div class="w-2/3">
+<h4 class="font-h3 text-lg mb-1">Orman Meyveli Cup</h4>
+<p class="text-sm text-on-surface-variant mb-2">Yulaf tabanlı, labne ve taze meyveli.</p>
+<span class="font-price text-secondary">$18.00</span>
 </div>
 </div>
 </div>
-<div class="group bg-surface-container-low rounded-3xl overflow-hidden shadow-sm shadow-[#3E2723]/5">
-<div class="aspect-[4/3] overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A deep purple acai bowl topped with neat rows of sliced bananas, fresh blueberries, and a sprinkle of artisanal granola and hemp seeds. The bowl is captured in a lifestyle setting, perhaps an outdoor cafe table with soft dappled sunlight. The focus is on the vibrant, natural color of the acai and the meticulously arranged toppings, suggesting a refreshing and nutrient-dense breakfast option." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Wy38bRFTd3mWO2pqqtBUdbq7YSDwCNN1DfdknVSyiuLgPbYHktQFP1D-coA0TZaIEE5gQM60cgG5ttTq0OScLv11YiOWWvyq3fabLP90HFkV7mlQXbolt0NrHSQOgFzpn-QNN4me7SFFORkEx0GcAmAGifilm73zimdyjhm8_wRWZ-xAgUSHSfHOLLqdi1Gtj-06aIR8cO4ww6b39yQoJ506xUdGE0VW7XcnMFivri3jdE_2uaOPJb83qY8LU9mt1o-i5vlVoJXi"/>
 </div>
-<div class="p-6">
-<div class="flex justify-between items-start mb-2">
-<h4 class="font-h3 text-h3 text-[#3E2723]">Acai Power</h4>
-<span class="font-price text-price text-primary">$14.00</span>
+<!-- Sub-category: Atıştırmalıklar -->
+<div id="atistirmaliklar">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">coffee</span>
+<h3 class="font-h3 text-xl text-on-background">Atıştırmalıklar</h3>
 </div>
-<p class="text-on-surface-variant font-body-md mb-4">Pure Amazonian acai blended with berries, topped with our signature grain-free granola and hemp seeds.</p>
-<div class="flex gap-2">
-<span class="px-3 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-xs font-bold uppercase tracking-wider">Superfood</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-low rounded-3xl p-6 flex items-center gap-6 shadow-sm">
+<div class="w-1/3 aspect-square rounded-2xl overflow-hidden bg-surface-variant">
+<img alt="Fit Snacks" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCngfZH9M6QrC2KrptIjeDCWaWCzwhBPpBOHnnnm-i1Tc81R43SXsOvv5KLlMYjiKOz0JQBKefrZiSKSc7k1aGsrX6a5w47QftwCE_dOMyG2MhvxVDltRUYV4Vnmr9ZZC7tgUjwnwQ_tzDvORF6a_1YtOHi5NiuOZQE114U6zQDUcGcRk1KB4qNZE-MBnIXPoalduESbbSWznfmgEPPL5n2mzm02w3hkQyWuf6-MYDq9C1Z9pO7wqlqoVDu0uCSmI22R3uHsvKWWaKC"/>
 </div>
+<div class="w-2/3">
+<h4 class="font-h3 text-lg mb-1">Fit Enerji Topları</h4>
+<p class="text-sm text-on-surface-variant mb-2">Kakao, fındık ve gün kurusu kayısı.</p>
+<span class="font-price text-secondary">$12.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bowl Section -->
+<section class="mb-stack-lg" id="bowl">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-h2 text-h2 text-secondary">Bowl</h2>
+<span class="h-px flex-1 mx-8 bg-outline-variant"></span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-gutter h-[600px]">
+<div class="md:col-span-2 md:row-span-2 bg-surface-container rounded-3xl relative overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A vibrant salad bowl with grilled salmon, avocado, quinoa, and colorful roasted vegetables. The bowl is ceramic and modern, resting on a clean white surface. Soft side-lighting highlights the fresh textures and natural colors. The overall feel is fresh, healthy, and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuRitqIpI7wL9f_bzWi3SHvkGyDikMyrTZN3799aE39f_9We9wAkmlM5eqZvG-UaVXLJZPtoLvPetCerJ6sTh40ysFs0BCWcGoRA-eLSOW-vtxIe8334kerXdrJjBF5Qahvt3FgPie9f1xD-fTNjlhQcolfs_EjBitDB2N54hXwVEfiG7TKbn4e6-limoAUxWnR7WKQ7wc2QDo0Ow0avnR9LAZMSHc-_ZC2f4FkHxU8ouiS-G7xo5EVuwxKuksweOuGEQ5H8ZzlESb"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-[#3E2723]/80 to-transparent text-white">
+<h3 class="font-h3 text-h3 mb-2">Omega Vitality Bowl</h3>
+<p class="text-sm opacity-90 mb-4">Grilled wild-caught salmon, tri-color quinoa, avocado, and house-made lemon tahini dressing.</p>
+<span class="font-price text-xl">$19.50</span>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container-high rounded-3xl p-8 flex items-center gap-6">
+<div class="w-1/2">
+<h3 class="font-h3 text-h3 text-on-background mb-2">Acai Power</h3>
+<p class="text-sm text-on-surface-variant mb-4">Amazonian acai topped with house granola, hemp seeds, and seasonal berries.</p>
+<span class="font-price text-secondary text-lg">$16.00</span>
+</div>
+<div class="w-1/2 h-full rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A beautifully presented acai bowl with precise rows of blueberries, strawberries, and almond slices. The acai base is a deep, rich purple. The background is a clean, bright, light-mode cafe setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ979bQ49SY1gcMlXy7S3K5Pf9_Cj60mZzOuoeX3LD3uuVWxWgbTyTkxBFxliH5PfB920QDl1jLIIHR7SLSWqQ1JAcOqOB-SKcOpE6R0vtoCKWylS7DULqqe7WawbZP4BUuCinY8dErGjmv_VqnQx8Xe0is3uBU0is-8w4e3x09o_90_7B9mBbm-qI5H3A-V4OONws3uSGyxoHNkpnr4LnGbjuiH9KlGa2JvfYpjVzCB8LDRQ6Zv7rcEYPDKEyJY_emjD1FHrwkgDp"/>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface-container-high rounded-3xl p-8 flex items-center gap-6">
+<div class="w-1/2 h-full rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A vibrant Mediterranean bowl with chickpeas, feta, cucumbers, tomatoes, and kalamata olives on a bed of farro. The lighting is bright and natural, emphasizing the freshness of the ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc7zEqIrYXeHgXNZv-ljiJz3d8JMQjngNjeKoUc8J6gISduaIZ-wnKv7MTJM9TkFXluy89Td_cNyEDoRtpcWRqO7poJU69SD2FSzWtcGaBq1R2w9XkyGIO5OUD7QEYPgoWu3qsVXhNdEVoQC26T7gNpUJPH8ymZ48KnbgfXB0BGLc5Jj6EmQ9MaS1I61t-Qgv-Ws-W9xDsZgXS6rOl3kd86PrSIX9BOpRVCHjsJDSk2-tXQcVyVXvVCB3YAsMySgsL0bGy7R6411Ar"/>
+</div>
+<div class="w-1/2">
+<h3 class="font-h3 text-h3 text-on-background mb-2">Mediterranean Zen</h3>
+<p class="text-sm text-on-surface-variant mb-4">Sprouted farro, cucumber, organic feta, and roasted chickpeas with herb vinaigrette.</p>
+<span class="font-price text-secondary text-lg">$17.00</span>
 </div>
 </div>
 </div>
 </section>
-<!-- Additional Categories Placeholder -->
-<section class="py-12 text-center bg-surface-container rounded-3xl border border-dashed border-stone-300">
-<p class="text-on-surface-variant italic font-body-lg">Full menu including Pastries, Beverages, Fit Treats, and Sugar-Free options available in-store.</p>
-</section>
+<!-- Featured Story Component -->
+<section class="mb-stack-lg bg-surface-container-lowest rounded-[48px] p-12 flex flex-col md:flex-row items-center gap-12 border border-outline-variant/30">
+<div class="md:w-1/2">
+<span class="font-label-caps text-primary tracking-[0.2em] mb-4 block">OUR PHILOSOPHY</span>
+<h2 class="font-h1 text-h1 text-on-background mb-6">The Discipline of Fit, The Joy of Cake.</h2>
+<p class="font-body-lg text-on-surface-variant mb-8 leading-relaxed">We believe you shouldn't have to choose between your health goals and your culinary cravings. Every recipe in our studio is meticulously developed to balance macro-nutrient density with the pure indulgence of artisanal pastry craft.</p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover" data-alt="Portrait of a young professional woman in a bright kitchen, representing a healthy customer base." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFavIimxyea32zHgE-xbJRFKT79vGrwu1UhtXfKDyl-wt-h2qRW87dOY3EU7N5lOMTD6qXXGqa-OAjeaEEvM0m8beb6gQPNpc2TF-qJ8sw_TiR3KjWNyFYsrB0hEq1ayMd2MCry1TDN-jFAHt8ygQwyDm-6xpq8d6C2DZj8gSl78_RquhFjD_gIpyv8AIVnQMHLi1lhmIfIvNtMjqoCDrYqY1wqflP83ryg3MEEPDNWfwSshpK3ziBm7oVjZ82u-YnHJZNoJqFcj2U"/>
+<img class="w-12 h-12 rounded-full border-4 border-white object-cover" data-alt="Portrait of a male chef in a minimalist uniform, representing the artisanal craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDskSvOUX0Pj4azpktNoD3PjgQ0APpcbReQ6jI71lbTnVDHA8jlyTE5QhlhB3McLUylds7TWUaUgLpCcjK8bUetMruix6UzUuHziYDXPyJqqUTob2W7hrZabraXyFs7ybOxZDY4hwR5qTKLa6EgQBtshQhzfFuaZbzBYFSuXmmbAOFyuO7eGMAfE-VI6qNpqOA2N1Kk36wDlTm4SQ6UZibMtxi8aUtasTvxwpXe1SylVcp5TCIxYkDKrCFQ-XOM4ryl7Ipq4nn34fyN"/>
 </div>
-</main>
+<p class="text-sm font-body-md text-on-surface-variant">Trusted by 2k+ health enthusiasts monthly.</p>
+</div>
+</div>
+<div class="md:w-1/2 relative">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A split composition image: on one side, raw organic ingredients like nuts and flour; on the other side, a perfectly finished, elegant dessert. The lighting is artistic and dramatic, showcasing the journey from 'fit' to 'cake'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY0AeHxJ_YmXTKbd_UwVpOIM3hCDdS_2-E5m7vRoKcbE-hzcaiwN35hW-mibZmd06Jo55KgyB3cJ19iTX4qiS1svE_QXqalUQ1QgnkfxCEd9ldhoonk-6ATPi1KryYvlz5PoZ-9R6BBZpdlaj9obpBSM0rNezlNRJ66fyE-x4UF5jlwpg8BZfU6cra4G9udy1H_Lcf6qbZTENulETJ8XuQ7R7P_CJlR4Xo0VELAHZuj4p17lQRRyr47eZJsBxnXdqxsQR_UW5ZxNYh"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-2xl shadow-xl max-w-[200px]">
+<p class="font-h3 text-xl mb-1 italic">100%</p>
+<p class="text-[10px] font-label-caps uppercase tracking-wider">Natural Ingredients</p>
+</div>
+</div>
+</section>
 </div>
 <!-- Footer -->
-<footer class="bg-stone-50 dark:bg-stone-950 full-width border-t border-stone-200 dark:border-stone-800 flat no shadows w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<footer class="bg-stone-50 dark:bg-stone-900 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-stone-200 dark:border-stone-800 font-sans text-xs tracking-wide uppercase text-stone-500">
 <div class="flex flex-col items-center md:items-start gap-2">
-<h5 class="text-sm font-bold text-[#3E2723] dark:text-stone-200">Fit &amp; Cake Studio</h5>
-<p class="font-noto-serif text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600">© 2024 Fit &amp; Cake Studio. Handcrafted Wellness.</p>
+<p class="">© 2024 Fit &amp; Cake Bakery. Crafted with discipline and indulgence.</p>
+<div class="flex gap-4 mt-2">
+<a class="hover:text-[#8DA399] transition-colors" href="#">Sourcing</a>
+<a class="hover:text-[#8DA399] transition-colors" href="#">Dietary Info</a>
+<a class="hover:text-[#8DA399] transition-colors" href="#">Shipping</a>
+<a class="hover:text-[#8DA399] transition-colors" href="#">Careers</a>
+<a class="hover:text-[#8DA399] transition-colors" href="#">Contact</a>
 </div>
-<div class="flex gap-8">
-<a class="font-noto-serif text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:text-[#8DA399] transition-colors" href="#">Our Philosophy</a>
-<a class="font-noto-serif text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:text-[#8DA399] transition-colors" href="#">Ingredients</a>
-<a class="font-noto-serif text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:text-[#8DA399] transition-colors" href="#">Locations</a>
-<a class="font-noto-serif text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:text-[#8DA399] transition-colors" href="#">Contact</a>
+</div>
+<div class="flex gap-6">
+<a class="text-stone-500 hover:text-[#8DA399] transition-colors" href="#">Instagram</a>
+<a class="text-stone-500 hover:text-[#8DA399] transition-colors" href="#">Pinterest</a>
 </div>
 </footer>
-<!-- Mobile Navigation Drawer Overlay (Hidden by default) -->
-<div class="fixed inset-0 bg-black/50 z-[60] hidden md:hidden" id="drawer-overlay">
-<div class="bg-[#fdfbf7] dark:bg-stone-900 h-full w-72 shadow-2xl p-6 transition-transform -translate-x-full" id="drawer-content">
-<div class="flex justify-between items-center mb-8">
-<h2 class="text-xl font-bold text-[#3E2723] dark:text-[#fdfbf7] font-noto-serif">Menu Categories</h2>
-<button class="text-stone-500" id="close-drawer">
-<span class="material-symbols-outlined">close</span>
+</main>
+<!-- Floating Action Button - Contextual for Order -->
+<button class="fixed bottom-8 right-8 bg-secondary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform md:hidden">
+<span class="material-symbols-outlined">shopping_cart</span>
 </button>
-</div>
-<nav class="space-y-4">
-<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 font-noto-serif text-sm font-medium" href="#Artisan Breads">
-<span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
-                    Artisan Breads
-                </a>
-<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 font-noto-serif text-sm font-medium" href="#Signature Cakes">
-<span class="material-symbols-outlined" data-icon="cake">cake</span>
-                    Signature Cakes
-                </a>
-<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 font-noto-serif text-sm font-medium" href="#Healthy Bowls">
-<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
-                    Healthy Bowls
-                </a>
-<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 font-noto-serif text-sm font-medium" href="#Pastries">
-<span class="material-symbols-outlined" data-icon="croissant">toast</span>
-                    Pastries
-                </a>
-<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 font-noto-serif text-sm font-medium" href="#Beverages">
-<span class="material-symbols-outlined" data-icon="local_cafe">local_cafe</span>
-                    Beverages
-                </a>
-<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 font-noto-serif text-sm font-medium" href="#Fit Treats">
-<span class="material-symbols-outlined" data-icon="nutrition">nutrition</span>
-                    Fit Treats
-                </a>
-<a class="flex items-center gap-3 text-stone-600 dark:text-stone-400 font-noto-serif text-sm font-medium" href="#Sugar-Free">
-<span class="material-symbols-outlined" data-icon="ice_skating">ice_skating</span>
-                    Sugar-Free
-                </a>
-</nav>
-</div>
-</div>
-<script>
-        const menuBtn = document.querySelector('[aria-label="Open menu"]');
-        const overlay = document.getElementById('drawer-overlay');
-        const drawer = document.getElementById('drawer-content');
-        const closeBtn = document.getElementById('close-drawer');
-        const links = document.querySelectorAll('#drawer-content a');
-
-        function openDrawer() {
-            overlay.classList.remove('hidden');
-            setTimeout(() => {
-                drawer.classList.remove('-translate-x-full');
-            }, 10);
-        }
-
-        function closeDrawer() {
-            drawer.classList.add('-translate-x-full');
-            setTimeout(() => {
-                overlay.classList.add('hidden');
-            }, 300);
-        }
-
-        menuBtn.addEventListener('click', openDrawer);
-        closeBtn.addEventListener('click', closeDrawer);
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) closeDrawer();
-        });
-        links.forEach(link => link.addEventListener('click', closeDrawer));
-    </script>
 </body></html>

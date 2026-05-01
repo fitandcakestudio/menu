@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 
-<html class="light" lang="tr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Fit &amp; Cake Studio | Sun-Baked Simplicity</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fit &amp; Cake Studio | Sun-Baked Simplicity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -73,269 +75,289 @@
             }
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
+
         body {
             font-family: 'Manrope', sans-serif;
             background-color: #faf5ee;
             color: #3a302a;
         }
-        h1, h2, h3, .serif-heading {
+
+        h1,
+        h2,
+        h3,
+        .serif-heading {
             font-family: 'EB Garamond', serif;
         }
+
         .sidebar-scroll::-webkit-scrollbar {
             width: 2px;
         }
+
         .sidebar-scroll::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .sidebar-scroll::-webkit-scrollbar-thumb {
             background: #d8d0c8;
         }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        section {
+            scroll-margin-top: 100px;
+        }
+        
     </style>
 </head>
+
 <body class="bg-background text-on-background antialiased">
-<!-- Mobile Top Bar (Hidden on Desktop) -->
-<header class="fixed top-0 w-full z-40 bg-[#faf5ee]/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-[#d8d0c8]/40 dark:border-stone-800 flex justify-between items-center px-6 py-4 md:hidden">
-<span class="text-2xl font-serif italic text-[#c2652a] dark:text-[#d9773b]">Fit &amp; Cake Studio</span>
-<div class="flex items-center space-x-4">
-<span class="material-symbols-outlined text-[#c2652a]">search</span>
-<span class="material-symbols-outlined text-[#c2652a]">account_circle</span>
-</div>
-</header>
-<!-- SideNavBar (Desktop Shell) -->
-<aside class="fixed left-0 top-0 h-screen w-72 hidden md:flex flex-col bg-[#faf5ee] border-r border-[#d8d0c8]/60 sidebar-scroll overflow-y-auto">
-<div class="flex flex-col p-8 space-y-4">
-<!-- Brand Section -->
-<div class="mb-10">
-<h1 class="text-3xl font-serif text-[#c2652a] leading-tight">Fit &amp; Cake<br/>Studio</h1>
-<p class="text-sm font-body uppercase tracking-[0.2em] text-secondary mt-2 opacity-70">Sun-Baked Simplicity</p>
-</div>
-<!-- Primary Navigation Tabs -->
-<nav class="space-y-2">
-<!-- Sandviçler (Active) -->
-<div class="group">
-<a class="flex items-center space-x-3 p-3 text-[#c2652a] font-bold border-r-4 border-[#c2652a] bg-stone-100/50 transition-all duration-100 scale-95 origin-left" href="#">
-<span class="material-symbols-outlined" data-icon="lunch_dining">lunch_dining</span>
-<span class="text-base">Sandviçler</span>
-</a>
-<div class="ml-10 mt-2 space-y-2 flex flex-col border-l border-outline-variant/40 pl-4">
-<a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Artizan Ekşi Mayalı</a>
-<a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Protein Kaseleri</a>
-<a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Glutensiz Seçenekler</a>
-</div>
-</div>
-<!-- Tatlılar -->
-<a class="flex items-center space-x-3 p-3 text-[#5a4e46] hover:bg-stone-100 transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
-<span class="text-base">Tatlılar</span>
-</a>
-<!-- Şeker İlavesiz Tatlılar -->
-<a class="flex items-center space-x-3 p-3 text-[#5a4e46] hover:bg-stone-100 transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="spa">spa</span>
-<span class="text-base">Şeker İlavesiz Tatlılar</span>
-</a>
-</nav>
-<!-- Secondary/Footer Links -->
-<div class="pt-12 mt-auto border-t border-outline-variant/30 flex flex-col space-y-4">
-<a class="flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-lg" data-icon="info">info</span>
-<span>Hakkımızda</span>
-</a>
-<a class="flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
-<span>İletişim</span>
-</a>
-<div class="pt-8">
-<p class="text-[10px] uppercase tracking-widest text-outline">© 2024 Fit &amp; Cake Studio</p>
-</div>
-</div>
-</div>
-</aside>
-<!-- Main Content Canvas -->
-<main class="md:ml-72 min-h-screen pt-20 md:pt-0">
-<!-- Hero Section (Editorial Focus) -->
-<section class="px-8 md:px-16 py-16 md:py-24 max-w-7xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-<div class="md:col-span-7">
-<h2 class="text-6xl md:text-8xl font-serif italic text-on-background leading-[0.9] tracking-tighter">
-                        Günün En <br/> <span class="text-primary">Taze</span> Anı.
+    <!-- Mobile Top Bar (Hidden on Desktop) -->
+    <header class="fixed top-0 w-full z-40 bg-[#faf5ee]/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-[#d8d0c8]/40 dark:border-stone-800 flex justify-between items-center px-6 py-4 md:hidden">
+        <span class="text-2xl font-serif italic text-[#c2652a] dark:text-[#d9773b]">Fit &amp; Cake Studio</span>
+        <div class="flex items-center space-x-4">
+            <span class="material-symbols-outlined text-[#c2652a]">search</span>
+            <span class="material-symbols-outlined text-[#c2652a]">account_circle</span>
+        </div>
+    </header>
+    <!-- SideNavBar (Desktop Shell) -->
+    <aside class="fixed left-0 top-0 h-screen w-72 hidden md:flex flex-col bg-[#faf5ee] border-r border-[#d8d0c8]/60 sidebar-scroll overflow-y-auto">
+        <div class="flex flex-col p-8 space-y-4">
+            <!-- Brand Section -->
+            <div class="mb-10">
+                <h1 class="text-3xl font-serif text-[#c2652a] leading-tight">Fit &amp; Cake<br />Studio</h1>
+                <p class="text-sm font-body uppercase tracking-[0.2em] text-secondary mt-2 opacity-70">Sun-Baked Simplicity</p>
+            </div>
+            <!-- Primary Navigation Tabs -->
+            <nav class="space-y-2">
+                <!-- Sandviçler (Active) -->
+                <div class="group">
+                    <a class="flex items-center space-x-3 p-3 text-[#c2652a] font-bold border-r-4 border-[#c2652a] bg-stone-100/50 transition-all duration-100 scale-95 origin-left" href="#sandvicler">
+                        <span class="material-symbols-outlined" data-icon="lunch_dining">lunch_dining</span>
+                        <span class="text-base">Sandviçler</span>
+                    </a>
+                    <div class="ml-10 mt-2 space-y-2 flex flex-col border-l border-outline-variant/40 pl-4">
+                        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Artizan Ekşi Mayalı</a>
+                        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Protein Kaseleri</a>
+                        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Glutensiz Seçenekler</a>
+                    </div>
+                </div>
+                <!-- Tatlılar -->
+                <a class="flex items-center space-x-3 p-3 text-[#5a4e46] hover:bg-stone-100 transition-all duration-300" href="#seker-ilavesiz">
+                    <span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
+                    <span class="text-base">Tatlılar</span>
+                </a>
+                <!-- Şeker İlavesiz Tatlılar -->
+                <a class="flex items-center space-x-3 p-3 text-[#5a4e46] hover:bg-stone-100 transition-all duration-300" href="#seker-ilavesiz">
+                    <span class="material-symbols-outlined" data-icon="spa">spa</span>
+                    <span class="text-base">Şeker İlavesiz Tatlılar</span>
+                </a>
+            </nav>
+            <!-- Secondary/Footer Links -->
+            <div class="pt-12 mt-auto border-t border-outline-variant/30 flex flex-col space-y-4">
+                <a class="flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#">
+                    <span class="material-symbols-outlined text-lg" data-icon="info">info</span>
+                    <span>Hakkımızda</span>
+                </a>
+                <a class="flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#">
+                    <span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+                    <span>İletişim</span>
+                </a>
+                <div class="pt-8">
+                    <p class="text-[10px] uppercase tracking-widest text-outline">© 2024 Fit &amp; Cake Studio</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main class="md:ml-72 min-h-screen pt-20 md:pt-0">
+        <!-- Hero Section (Editorial Focus) -->
+        <section class="px-8 md:px-16 py-16 md:py-24 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <h2 class="text-6xl md:text-8xl font-serif italic text-on-background leading-[0.9] tracking-tighter">
+                        Günün En <br /> <span class="text-primary">Taze</span> Anı.
                     </h2>
-<p class="mt-8 text-lg md:text-xl font-body text-on-surface-variant max-w-lg leading-relaxed">
+                    <p class="mt-8 text-lg md:text-xl font-body text-on-surface-variant max-w-lg leading-relaxed">
                         Doğanın sunduğu en saf malzemelerle, işlenmiş şekerden uzak, modern bir pastane deneyimi. Her dilimde sağlıklı bir hikaye.
                     </p>
-<div class="mt-10 flex space-x-6">
-<button class="px-8 py-4 bg-primary text-on-primary font-body text-sm tracking-widest uppercase rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                    <div class="mt-10 flex space-x-6">
+                        <button class="px-8 py-4 bg-primary text-on-primary font-body text-sm tracking-widest uppercase rounded-lg shadow-sm hover:opacity-90 transition-opacity">
                             Menüyü Keşfet
                         </button>
-</div>
-</div>
-<div class="md:col-span-5 relative">
-<div class="aspect-[4/5] overflow-hidden rounded-xl shadow-2xl">
-<img alt="Artisan sourdough bread" class="w-full h-full object-cover" data-alt="A close-up architectural shot of freshly baked artisan sourdough bread on a warm linen cloth. The lighting is soft morning sun streaming through a window, creating long, delicate shadows. The scene is styled with warm terracotta tones and cream backgrounds, embodying a luxurious yet minimal aesthetic. The texture of the golden crust is crisp and detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjp_JjBjSOQIJ_rXEh3qO010q9kqVfeKwY4DuwTbqLcnZ0Jr0IQYu1TNy77UONY96I4XwKf5qkIhrRKsp1V0DnOz60GPGjk3qD9Ipcohw-iV-sPsi0__2kkugOoWLzffq0IzCAWYNiKj6jE6S2W0GVTosmga1weDzzpz8UpVbqrzV81u_NkB1z38vbmfj2_cfzfXiwzLQNtknaf0uv2AB-PnUbhEUUC7PNuos36oo4FS46KYmtDZus_BU6Jjwc3N8bT3kF-3KhMUzN"/>
-</div>
-<div class="absolute -bottom-6 -left-6 bg-tertiary p-8 text-on-tertiary rounded-lg hidden md:block max-w-[200px]">
-<p class="font-serif italic text-xl">100% Doğal İçerik</p>
-<p class="font-body text-xs mt-2 uppercase tracking-tighter opacity-80">Rafine Şeker İçermez</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Category Section: Sandviçler -->
-<section class="px-8 md:px-16 py-12 max-w-7xl mx-auto">
-<div class="flex items-baseline justify-between mb-12 border-b border-outline-variant/40 pb-4">
-<h3 class="text-4xl font-serif text-on-background">Sandviçler</h3>
-<span class="font-body text-sm text-secondary uppercase tracking-widest">08 Seçenek</span>
-</div>
-<!-- Bento-Style Product Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Large Feature Card -->
-<div class="md:col-span-2 group cursor-pointer">
-<div class="relative overflow-hidden rounded-xl aspect-[16/9] mb-4">
-<img alt="Avocado Toast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist and high-end presentation of a gourmet avocado toast on ekşi maya bread. The plate is artisan ceramic, sitting on a sun-drenched linen table runner. Topped with microgreens and chili flakes, the lighting is bright and warm, capturing the vibrant green of the avocado against the earthy brown of the bread. The overall mood is healthy, luxurious, and peaceful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgpCYa0iZPxZK881H-500Vqe0IYuun23Mlcyq3L3JqSHHuwEu6iS-nlmUtvlvoJXj0eP6v7yrtHZI5YqvECa7iOjqS90cNrzwZtIMF6R6dcfRuOR9msSrUTbtKEn4VoTI_X8JLLZw4rQMSZ3McqyySTFsGvHuJvfsNrswJTWxLl4cyEy5Yqpa32Set7k2_sw4KSmErLuHfYlrp2PKeyyyKoIQIn5cxotX3f5Oq3Ohfou_7dZ1aRjhKcxG63b76nOoYNcF9eQaa_tmJ"/>
-<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Favori</div>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="text-2xl font-serif text-on-background">Avokadolu Artizan Sandviç</h4>
-<p class="text-sm text-on-surface-variant font-body mt-1">Ekşi maya ekmeği, ezilmiş avokado, poşe yumurta ve çörek otu.</p>
-</div>
-<p class="text-xl font-serif text-primary">245 TL</p>
-</div>
-</div>
-<!-- Small Card 1 -->
-<div class="group cursor-pointer">
-<div class="relative overflow-hidden rounded-xl aspect-square mb-4">
-<img alt="Hummus Toast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A top-down aesthetic view of a hummus and roasted vegetable sandwich on dark grain bread. The setting is a bright, minimalist cafe with warm wooden textures. The dish is garnished with fresh herbs and presented with a side of micro-salad. The lighting is diffused and warm, reflecting a serene and healthy lunch environment with soft earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4PJCMTbgRCv3m3-RMLBMGYliaoZDIA2EtT0osk5LCT9HGBduO9jdBOBaXPeyCFvfBPSTJQX1QOd694fgY5Ga7QS1pAfMmBlof6VBhWQdT5ffQMMqI1iLGbWKfgKOaOGIO9UX2XcdlNOw-2OsP1i8SuH4jh39ePpNKY1ftqrbKr_yJqhTQO_KuYJGlOOHs97oIGJHGUE8tPyplEFHUXrVZ2WO-C6rcJWf-OMLTvsSDJ7MZIfRGFhfUNx8UIwZQmQ8CXv1AXMB5t_dD"/>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="text-xl font-serif text-on-background">Humus &amp; Roast Sebze</h4>
-<p class="text-xs text-on-surface-variant font-body mt-1">Ev yapımı humus, köz biber ve zahter.</p>
-</div>
-<p class="text-lg font-serif text-primary">195 TL</p>
-</div>
-</div>
-<!-- Small Card 2 -->
-<div class="group cursor-pointer">
-<div class="relative overflow-hidden rounded-xl aspect-square mb-4">
-<img alt="Chicken Pesto Sandwich" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A delicious sourdough sandwich with pesto and grilled chicken, wrapped partially in brown parchment paper. The background is a minimalist warm-grey stone surface with a sprig of fresh basil nearby. The lighting is crisp and modern, emphasizing the clean ingredients and high-quality bread texture. The overall aesthetic is gourmet, fit-focused, and extremely clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOhVsBlJWlrfDx7-2IoNNmKcw7xOUChBOPsI1uBlU8LJySMtG_f_DewOXJtM7w3LRdE0FEiLq9zg38ij827B2h8FJS_ppmoeqqaA_8Ugnu53gb7quEYAe2wkZg0gC3NcjvubjuIa_E4SbqCDiM9X629VBnDAwfIt7K0WplXI5izJgMHzEAGSwAVX4LrFCW38WOB5Il1C6Mq2qAGhMSqnelWmLTcP4vsxgY_HJ7sdjGpV58OPwA7LmUMk7copccHO1D6qY2gv_QFSZe"/>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="text-xl font-serif text-on-background">Pesto Tavuklu</h4>
-<p class="text-xs text-on-surface-variant font-body mt-1">Fesleğenli pesto, ızgara tavuk ve mozarella.</p>
-</div>
-<p class="text-lg font-serif text-primary">225 TL</p>
-</div>
-</div>
-<!-- Secondary Feature Card -->
-<div class="md:col-span-2 group cursor-pointer">
-<div class="relative overflow-hidden rounded-xl aspect-[16/9] mb-4">
-<img alt="Vegan Bagel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated vegan bagel sandwich with cashew cream cheese and smoked carrots, styled like salmon. The background is a linen texture in a warm ivory shade. Soft focus on a ceramic coffee cup in the distance. The lighting is elegant and airy, highlighting the healthy and plant-based nature of the meal in a luxury editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP6_mjVgdm3_-GmcXWyEWKeN4lRQDPIFLhsRhS2c72cgr50ri-YlF6b3WShVetonZwrNQTrU8vpeFmFmOPlUC9nooTfVbRiFq4iTn1AdvIbU5IWgF3M_TjVSEzcM4NCnbSiOXcjvHE1AJgdHNu26ZbVxBuhlLluEpxLLmaqQXmqRpjo3DWzMIv8oQelf8jgipifXyQketJ29jhm8oqj2SpICbihGpHugSVA2iMbPzKZzdMq75Tl_9VWI3EjJkadgkz0Jb0SrGwKNVR"/>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h4 class="text-2xl font-serif text-on-background">Vegan 'Somon' Bagel</h4>
-<p class="text-sm text-on-surface-variant font-body mt-1">Havuç füme, kaju krem peyniri ve kapari.</p>
-</div>
-<p class="text-xl font-serif text-primary">210 TL</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Aesthetic Mid-Section: The Philosophy -->
-<section class="bg-surface-container-low my-12 py-24 px-8 md:px-16 overflow-hidden">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-<div class="w-full md:w-1/2">
-<h3 class="text-5xl md:text-6xl font-serif italic text-secondary leading-tight">İyi Malzeme,<br/><span class="text-on-background not-italic">İyi Hisler.</span></h3>
-<p class="mt-8 font-body text-on-surface-variant text-lg leading-relaxed max-w-md">
+                    </div>
+                </div>
+                <div class="md:col-span-5 relative">
+                    <div class="aspect-[4/5] overflow-hidden rounded-xl shadow-2xl">
+                        <img alt="Artisan sourdough bread" class="w-full h-full object-cover" data-alt="A close-up architectural shot of freshly baked artisan sourdough bread on a warm linen cloth. The lighting is soft morning sun streaming through a window, creating long, delicate shadows. The scene is styled with warm terracotta tones and cream backgrounds, embodying a luxurious yet minimal aesthetic. The texture of the golden crust is crisp and detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjp_JjBjSOQIJ_rXEh3qO010q9kqVfeKwY4DuwTbqLcnZ0Jr0IQYu1TNy77UONY96I4XwKf5qkIhrRKsp1V0DnOz60GPGjk3qD9Ipcohw-iV-sPsi0__2kkugOoWLzffq0IzCAWYNiKj6jE6S2W0GVTosmga1weDzzpz8UpVbqrzV81u_NkB1z38vbmfj2_cfzfXiwzLQNtknaf0uv2AB-PnUbhEUUC7PNuos36oo4FS46KYmtDZus_BU6Jjwc3N8bT3kF-3KhMUzN" />
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-tertiary p-8 text-on-tertiary rounded-lg hidden md:block max-w-[200px]">
+                        <p class="font-serif italic text-xl">100% Doğal İçerik</p>
+                        <p class="font-body text-xs mt-2 uppercase tracking-tighter opacity-80">Rafine Şeker İçermez</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Category Section: Sandviçler -->
+        <section id="sandvicler" class="px-8 md:px-16 py-12 max-w-7xl mx-auto">
+            <div class="flex items-baseline justify-between mb-12 border-b border-outline-variant/40 pb-4">
+                <h3 class="text-4xl font-serif text-on-background">Sandviçler</h3>
+                <span class="font-body text-sm text-secondary uppercase tracking-widest">08 Seçenek</span>
+            </div>
+            <!-- Bento-Style Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Large Feature Card -->
+                <div class="md:col-span-2 group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl aspect-[16/9] mb-4">
+                        <img alt="Avocado Toast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist and high-end presentation of a gourmet avocado toast on ekşi maya bread. The plate is artisan ceramic, sitting on a sun-drenched linen table runner. Topped with microgreens and chili flakes, the lighting is bright and warm, capturing the vibrant green of the avocado against the earthy brown of the bread. The overall mood is healthy, luxurious, and peaceful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgpCYa0iZPxZK881H-500Vqe0IYuun23Mlcyq3L3JqSHHuwEu6iS-nlmUtvlvoJXj0eP6v7yrtHZI5YqvECa7iOjqS90cNrzwZtIMF6R6dcfRuOR9msSrUTbtKEn4VoTI_X8JLLZw4rQMSZ3McqyySTFsGvHuJvfsNrswJTWxLl4cyEy5Yqpa32Set7k2_sw4KSmErLuHfYlrp2PKeyyyKoIQIn5cxotX3f5Oq3Ohfou_7dZ1aRjhKcxG63b76nOoYNcF9eQaa_tmJ" />
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Favori</div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-2xl font-serif text-on-background">Avokadolu Artizan Sandviç</h4>
+                            <p class="text-sm text-on-surface-variant font-body mt-1">Ekşi maya ekmeği, ezilmiş avokado, poşe yumurta ve çörek otu.</p>
+                        </div>
+                        <p class="text-xl font-serif text-primary">245 TL</p>
+                    </div>
+                </div>
+                <!-- Small Card 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+                        <img alt="Hummus Toast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A top-down aesthetic view of a hummus and roasted vegetable sandwich on dark grain bread. The setting is a bright, minimalist cafe with warm wooden textures. The dish is garnished with fresh herbs and presented with a side of micro-salad. The lighting is diffused and warm, reflecting a serene and healthy lunch environment with soft earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4PJCMTbgRCv3m3-RMLBMGYliaoZDIA2EtT0osk5LCT9HGBduO9jdBOBaXPeyCFvfBPSTJQX1QOd694fgY5Ga7QS1pAfMmBlof6VBhWQdT5ffQMMqI1iLGbWKfgKOaOGIO9UX2XcdlNOw-2OsP1i8SuH4jh39ePpNKY1ftqrbKr_yJqhTQO_KuYJGlOOHs97oIGJHGUE8tPyplEFHUXrVZ2WO-C6rcJWf-OMLTvsSDJ7MZIfRGFhfUNx8UIwZQmQ8CXv1AXMB5t_dD" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-xl font-serif text-on-background">Humus &amp; Roast Sebze</h4>
+                            <p class="text-xs text-on-surface-variant font-body mt-1">Ev yapımı humus, köz biber ve zahter.</p>
+                        </div>
+                        <p class="text-lg font-serif text-primary">195 TL</p>
+                    </div>
+                </div>
+                <!-- Small Card 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
+                        <img alt="Chicken Pesto Sandwich" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A delicious sourdough sandwich with pesto and grilled chicken, wrapped partially in brown parchment paper. The background is a minimalist warm-grey stone surface with a sprig of fresh basil nearby. The lighting is crisp and modern, emphasizing the clean ingredients and high-quality bread texture. The overall aesthetic is gourmet, fit-focused, and extremely clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOhVsBlJWlrfDx7-2IoNNmKcw7xOUChBOPsI1uBlU8LJySMtG_f_DewOXJtM7w3LRdE0FEiLq9zg38ij827B2h8FJS_ppmoeqqaA_8Ugnu53gb7quEYAe2wkZg0gC3NcjvubjuIa_E4SbqCDiM9X629VBnDAwfIt7K0WplXI5izJgMHzEAGSwAVX4LrFCW38WOB5Il1C6Mq2qAGhMSqnelWmLTcP4vsxgY_HJ7sdjGpV58OPwA7LmUMk7copccHO1D6qY2gv_QFSZe" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-xl font-serif text-on-background">Pesto Tavuklu</h4>
+                            <p class="text-xs text-on-surface-variant font-body mt-1">Fesleğenli pesto, ızgara tavuk ve mozarella.</p>
+                        </div>
+                        <p class="text-lg font-serif text-primary">225 TL</p>
+                    </div>
+                </div>
+                <!-- Secondary Feature Card -->
+                <div class="md:col-span-2 group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl aspect-[16/9] mb-4">
+                        <img alt="Vegan Bagel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated vegan bagel sandwich with cashew cream cheese and smoked carrots, styled like salmon. The background is a linen texture in a warm ivory shade. Soft focus on a ceramic coffee cup in the distance. The lighting is elegant and airy, highlighting the healthy and plant-based nature of the meal in a luxury editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP6_mjVgdm3_-GmcXWyEWKeN4lRQDPIFLhsRhS2c72cgr50ri-YlF6b3WShVetonZwrNQTrU8vpeFmFmOPlUC9nooTfVbRiFq4iTn1AdvIbU5IWgF3M_TjVSEzcM4NCnbSiOXcjvHE1AJgdHNu26ZbVxBuhlLluEpxLLmaqQXmqRpjo3DWzMIv8oQelf8jgipifXyQketJ29jhm8oqj2SpICbihGpHugSVA2iMbPzKZzdMq75Tl_9VWI3EjJkadgkz0Jb0SrGwKNVR" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="text-2xl font-serif text-on-background">Vegan 'Somon' Bagel</h4>
+                            <p class="text-sm text-on-surface-variant font-body mt-1">Havuç füme, kaju krem peyniri ve kapari.</p>
+                        </div>
+                        <p class="text-xl font-serif text-primary">210 TL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Aesthetic Mid-Section: The Philosophy -->
+        <section class="bg-surface-container-low my-12 py-24 px-8 md:px-16 overflow-hidden">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-5xl md:text-6xl font-serif italic text-secondary leading-tight">İyi Malzeme,<br /><span class="text-on-background not-italic">İyi Hisler.</span></h3>
+                    <p class="mt-8 font-body text-on-surface-variant text-lg leading-relaxed max-w-md">
                         Mutfak felsefemiz basitliğe dayanır. Yerel üreticilerden aldığımız taze meyveler, tam tahıllı unlar ve doğal tatlandırıcılarla bedeninize saygı duyuyoruz.
                     </p>
-<div class="mt-12 grid grid-cols-2 gap-8 border-t border-outline-variant/40 pt-8">
-<div>
-<span class="block text-3xl font-serif text-primary">0%</span>
-<span class="block text-xs uppercase tracking-widest font-body mt-1">Rafine Şeker</span>
-</div>
-<div>
-<span class="block text-3xl font-serif text-primary">100%</span>
-<span class="block text-xs uppercase tracking-widest font-body mt-1">El Yapımı</span>
-</div>
-</div>
-</div>
-<div class="w-full md:w-1/2 flex gap-4">
-<div class="w-1/2 pt-12">
-<img alt="Berry Tart" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="An editorial close-up of a healthy berry tart made with almond crust and fresh raspberries. The lighting is moody but warm, with deep shadows and soft highlights on the fruit's texture. Minimalist styling on a dark wood surface that complements the warm sienna and burnt orange branding. The composition is artistic and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxyZE3fwqJ-bM_shRUNpSTEUiix4W-q1DBPsBfYwRfce7FPR7Sk8Yso1xUXqPQ2PXypEHTgtJCV9xjrRzaxqHOocbgXUIrYyde9o_YiobAGH_khIQAa0FJ9A8clIrWTBmOXHTKpk86-SIl20PDQ63g0Cbiosqn15chHZ19maTls01HJb-jaMO97Ve-YDDloaOQrsHnbW4q2M89I1vVsqpc83j5fbglHD2BiUFlEh7RkBJYv9MdCNzUBxaF2Nm_gJ0OsGOJcbjf45cx"/>
-</div>
-<div class="w-1/2">
-<img alt="Smoothie Bowl" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="A vibrant and healthy acai bowl topped with granola, coconut flakes, and chia seeds. The bowl is handcrafted stone and sits on a clean, sunlit marble surface. The color palette is dominated by warm purples, creams, and golden browns. High-key lighting creates a fresh, energetic, and clean atmosphere typical of a premium health-focused studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBreN1w9iOaNzRsZL14xnPKo1bLKGUl3rAOOaxLftV0tcOXOiwFR75zOFz60V1lpvHTl8MLbDIBAXfXTK6fDQ5u_z_6GFZDiwLii3LKoY7410O4aXEUgWgZf_y4gPAMlAZJOlUC6p9cgnGw3GOsZKPkbb-BERecJdVi0_sD-DBIRQ-S-b1c96ltp_awUekOggzwzbKRqlx_bp_vHqcGagKODj7q_hrf-03vR5G80NWuo_OiYPT0pkpElncBCUkZ53BYBJjp4VP0t__x"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Category Section: Tatlılar & Şeker İlavesiz -->
-<section class="px-8 md:px-16 py-12 max-w-7xl mx-auto mb-24">
-<div class="flex items-baseline justify-between mb-12 border-b border-outline-variant/40 pb-4">
-<h3 class="text-4xl font-serif text-on-background">Şeker İlavesiz Tatlılar</h3>
-<span class="font-body text-sm text-secondary uppercase tracking-widest">En Çok Tercih Edilenler</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-<!-- Product Card -->
-<div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
-<img alt="Sugar Free Cake" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A slice of sugar-free chocolate cake made with dates and cocoa, served on a minimalist white plate. The background is a soft beige linen texture. The lighting is warm and golden, emphasizing the moist texture of the cake. It looks decadent yet clearly aligns with a health-conscious lifestyle. Minimalist and high-end food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjaMphYRvuohNB20zblOze5ugiBM7lbWtc2YtGgirwLQrwirBukG_RDwp19-3tabs-krz36SeanhkUUrqDuLU0xNUTvqyybusiE1rjnqTBE0ZIlUxg3HN0H5XqXcGyuAWtp4BY5XsNChXE7ueAPyc_7EWFuWHWa3mKpLGZ9DhrKIwOi5BJf1M7DcMz1a6y4m83kvz6GRQ-n6UM88hUN32uy1G-g54UK9PA27Tr9aMFzPHYzRD9KW1m9A8Shzy4dz0d9a756y-BmyoH"/>
-<h5 class="font-serif text-lg text-on-background">Hurmalı Fit Brownie</h5>
-<p class="text-xs font-body text-secondary mt-1">Glutensiz ve vegan.</p>
-<div class="mt-4 flex justify-between items-center">
-<span class="font-serif text-primary text-lg">165 TL</span>
-<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
-</div>
-</div>
-<!-- Product Card 2 -->
-<div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
-<img alt="Lemon Tart" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A sugar-free lemon curd tart with a grain-free crust, decorated with a slice of fresh lemon and a sprig of mint. The lighting is bright and cheerful, suggesting a fresh morning or early afternoon setting. The background is a clean linen-wrapped board in a light cream color. The image exudes freshness and clean eating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMlhoK8PqRnbhRUGomQnpODQitjz7gsn94nIx-gCWrdP-g_a0WdWuwYplu2rnKrquejwAXS_Q86MqJm-nrw1x2k0UC1s6L7voQ9IMTXtIMX_h-DdjDB4TIf3hs8LdBQGmJ9AKkVImaqO6oiXViBK1PXdyiCnRtDAalMAIETbpbl2J2bupLojAlFWbEOtxWVoaiSrycUaOC9R_ZGlfmVChD8yZuFKnHeQJbAuFg3KtXLqVznDEpm5EZRdd3fTJ7Fz2tX3h7Lik-TV-o"/>
-<h5 class="font-serif text-lg text-on-background">Limonlu Raw Tart</h5>
-<p class="text-xs font-body text-secondary mt-1">Hindistan cevizi sütü ile.</p>
-<div class="mt-4 flex justify-between items-center">
-<span class="font-serif text-primary text-lg">180 TL</span>
-<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
-</div>
-</div>
-<!-- Product Card 3 -->
-<div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
-<img alt="Energy Balls" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A collection of handmade energy balls made with nuts and seeds, displayed on a wooden board. The lighting is warm and cozy, focusing on the various textures of the coatings like coconut flakes and cocoa powder. The background is a soft-focus kitchen scene with warm terracotta tones. Professional and appetizing healthy snack photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtUpSfNtajo0Kyc4iXcsMoiswqYHkddlZhlKOooMJXDr0eJ1v1j5BTJ3oIirbhgfldL1s7dssrPCXJ7gjTikZzF0VreOmUu5d6LFoBNOfuCoV8QoHwJTSgWo_dzNkJfHUO9l9J-zhyEG7OZX85KlUEKUPiTFVy1Ms-jib52Rqgqk5L6RAf0MVnq385B7x0U_LHJawpkIxdBsaxPnY5I4I4gDlH4XPdvcWEQq8Y6YD_lq5Q2T5ts7XtIBiv0fSFK9WZMc0ULpCUncY4"/>
-<h5 class="font-serif text-lg text-on-background">Protein Atıştırmalık Seti</h5>
-<p class="text-xs font-body text-secondary mt-1">4 farklı çeşit enerji topu.</p>
-<div class="mt-4 flex justify-between items-center">
-<span class="font-serif text-primary text-lg">140 TL</span>
-<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
-</div>
-</div>
-<!-- Product Card 4 -->
-<div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
-<img alt="Pudding" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A chia seed pudding layered with mango puree in a glass jar, placed on a sunlit terrace table. The lighting is high-contrast morning light, casting beautiful shadows of nearby leaves. The scene is refreshing and high-end, emphasizing the healthy and luxury lifestyle of Fit &amp; Cake Studio. The color palette is golden and vibrant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNPGVKR_Ai2ehP1W1-bUfdfYYqGnXeLlG-bSoEJwljDXvrcFfl4sYD9dI3IU5FKkAUmMDeTjwzPxgRAgdZvle5dEK3uuF7VtbbWWVp-8k8F5V__mNIuPDCi9XY5J5EXk7sli01r7_6BeWobBhFZqckg_cCABHOwCXVtYBtry2tOI0vV07_IlX7PviEmRWFHbXXI8ys3CM9gkxYeQ96g1zqrG1G0ntW4sL9b3v8FBKbLYErkwelMqWNNxNY2rh2fRWCa-_62IjxEqOz"/>
-<h5 class="font-serif text-lg text-on-background">Mangolu Chia Puding</h5>
-<p class="text-xs font-body text-secondary mt-1">Bal ile tatlandırılmış.</p>
-<div class="mt-4 flex justify-between items-center">
-<span class="font-serif text-primary text-lg">155 TL</span>
-<span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer Shell -->
-<footer class="w-full py-12 bg-[#faf5ee] border-t border-[#d8d0c8]/40 flex flex-col items-center justify-center space-y-6 px-4 text-center">
-<div class="flex space-x-8">
-<a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Instagram</a>
-<a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Facebook</a>
-<a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Location</a>
-</div>
-<p class="text-stone-400 font-sans text-[10px] uppercase tracking-widest">© 2024 Fit &amp; Cake Studio. All rights reserved.</p>
-<div class="pt-4">
-<span class="text-xl font-serif italic text-[#c2652a] opacity-40">Sun-Baked Simplicity</span>
-</div>
-</footer>
-</main>
-</body></html>
+                    <div class="mt-12 grid grid-cols-2 gap-8 border-t border-outline-variant/40 pt-8">
+                        <div>
+                            <span class="block text-3xl font-serif text-primary">0%</span>
+                            <span class="block text-xs uppercase tracking-widest font-body mt-1">Rafine Şeker</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif text-primary">100%</span>
+                            <span class="block text-xs uppercase tracking-widest font-body mt-1">El Yapımı</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex gap-4">
+                    <div class="w-1/2 pt-12">
+                        <img alt="Berry Tart" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="An editorial close-up of a healthy berry tart made with almond crust and fresh raspberries. The lighting is moody but warm, with deep shadows and soft highlights on the fruit's texture. Minimalist styling on a dark wood surface that complements the warm sienna and burnt orange branding. The composition is artistic and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxyZE3fwqJ-bM_shRUNpSTEUiix4W-q1DBPsBfYwRfce7FPR7Sk8Yso1xUXqPQ2PXypEHTgtJCV9xjrRzaxqHOocbgXUIrYyde9o_YiobAGH_khIQAa0FJ9A8clIrWTBmOXHTKpk86-SIl20PDQ63g0Cbiosqn15chHZ19maTls01HJb-jaMO97Ve-YDDloaOQrsHnbW4q2M89I1vVsqpc83j5fbglHD2BiUFlEh7RkBJYv9MdCNzUBxaF2Nm_gJ0OsGOJcbjf45cx" />
+                    </div>
+                    <div class="w-1/2">
+                        <img alt="Smoothie Bowl" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="A vibrant and healthy acai bowl topped with granola, coconut flakes, and chia seeds. The bowl is handcrafted stone and sits on a clean, sunlit marble surface. The color palette is dominated by warm purples, creams, and golden browns. High-key lighting creates a fresh, energetic, and clean atmosphere typical of a premium health-focused studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBreN1w9iOaNzRsZL14xnPKo1bLKGUl3rAOOaxLftV0tcOXOiwFR75zOFz60V1lpvHTl8MLbDIBAXfXTK6fDQ5u_z_6GFZDiwLii3LKoY7410O4aXEUgWgZf_y4gPAMlAZJOlUC6p9cgnGw3GOsZKPkbb-BERecJdVi0_sD-DBIRQ-S-b1c96ltp_awUekOggzwzbKRqlx_bp_vHqcGagKODj7q_hrf-03vR5G80NWuo_OiYPT0pkpElncBCUkZ53BYBJjp4VP0t__x" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Category Section: Tatlılar & Şeker İlavesiz -->
+        <section id="seker-ilavesiz" class="px-8 md:px-16 py-12 max-w-7xl mx-auto mb-24">
+            <div class="flex items-baseline justify-between mb-12 border-b border-outline-variant/40 pb-4">
+                <h3 class="text-4xl font-serif text-on-background">Şeker İlavesiz Tatlılar</h3>
+                <span class="font-body text-sm text-secondary uppercase tracking-widest">En Çok Tercih Edilenler</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Product Card -->
+                <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+                    <img alt="Sugar Free Cake" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A slice of sugar-free chocolate cake made with dates and cocoa, served on a minimalist white plate. The background is a soft beige linen texture. The lighting is warm and golden, emphasizing the moist texture of the cake. It looks decadent yet clearly aligns with a health-conscious lifestyle. Minimalist and high-end food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjaMphYRvuohNB20zblOze5ugiBM7lbWtc2YtGgirwLQrwirBukG_RDwp19-3tabs-krz36SeanhkUUrqDuLU0xNUTvqyybusiE1rjnqTBE0ZIlUxg3HN0H5XqXcGyuAWtp4BY5XsNChXE7ueAPyc_7EWFuWHWa3mKpLGZ9DhrKIwOi5BJf1M7DcMz1a6y4m83kvz6GRQ-n6UM88hUN32uy1G-g54UK9PA27Tr9aMFzPHYzRD9KW1m9A8Shzy4dz0d9a756y-BmyoH" />
+                    <h5 class="font-serif text-lg text-on-background">Hurmalı Fit Brownie</h5>
+                    <p class="text-xs font-body text-secondary mt-1">Glutensiz ve vegan.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="font-serif text-primary text-lg">165 TL</span>
+                        <span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+                    <img alt="Lemon Tart" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A sugar-free lemon curd tart with a grain-free crust, decorated with a slice of fresh lemon and a sprig of mint. The lighting is bright and cheerful, suggesting a fresh morning or early afternoon setting. The background is a clean linen-wrapped board in a light cream color. The image exudes freshness and clean eating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMlhoK8PqRnbhRUGomQnpODQitjz7gsn94nIx-gCWrdP-g_a0WdWuwYplu2rnKrquejwAXS_Q86MqJm-nrw1x2k0UC1s6L7voQ9IMTXtIMX_h-DdjDB4TIf3hs8LdBQGmJ9AKkVImaqO6oiXViBK1PXdyiCnRtDAalMAIETbpbl2J2bupLojAlFWbEOtxWVoaiSrycUaOC9R_ZGlfmVChD8yZuFKnHeQJbAuFg3KtXLqVznDEpm5EZRdd3fTJ7Fz2tX3h7Lik-TV-o" />
+                    <h5 class="font-serif text-lg text-on-background">Limonlu Raw Tart</h5>
+                    <p class="text-xs font-body text-secondary mt-1">Hindistan cevizi sütü ile.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="font-serif text-primary text-lg">180 TL</span>
+                        <span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+                    <img alt="Energy Balls" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A collection of handmade energy balls made with nuts and seeds, displayed on a wooden board. The lighting is warm and cozy, focusing on the various textures of the coatings like coconut flakes and cocoa powder. The background is a soft-focus kitchen scene with warm terracotta tones. Professional and appetizing healthy snack photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtUpSfNtajo0Kyc4iXcsMoiswqYHkddlZhlKOooMJXDr0eJ1v1j5BTJ3oIirbhgfldL1s7dssrPCXJ7gjTikZzF0VreOmUu5d6LFoBNOfuCoV8QoHwJTSgWo_dzNkJfHUO9l9J-zhyEG7OZX85KlUEKUPiTFVy1Ms-jib52Rqgqk5L6RAf0MVnq385B7x0U_LHJawpkIxdBsaxPnY5I4I4gDlH4XPdvcWEQq8Y6YD_lq5Q2T5ts7XtIBiv0fSFK9WZMc0ULpCUncY4" />
+                    <h5 class="font-serif text-lg text-on-background">Protein Atıştırmalık Seti</h5>
+                    <p class="text-xs font-body text-secondary mt-1">4 farklı çeşit enerji topu.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="font-serif text-primary text-lg">140 TL</span>
+                        <span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+                    <img alt="Pudding" class="w-full aspect-square object-cover rounded-lg mb-4" data-alt="A chia seed pudding layered with mango puree in a glass jar, placed on a sunlit terrace table. The lighting is high-contrast morning light, casting beautiful shadows of nearby leaves. The scene is refreshing and high-end, emphasizing the healthy and luxury lifestyle of Fit &amp; Cake Studio. The color palette is golden and vibrant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNPGVKR_Ai2ehP1W1-bUfdfYYqGnXeLlG-bSoEJwljDXvrcFfl4sYD9dI3IU5FKkAUmMDeTjwzPxgRAgdZvle5dEK3uuF7VtbbWWVp-8k8F5V__mNIuPDCi9XY5J5EXk7sli01r7_6BeWobBhFZqckg_cCABHOwCXVtYBtry2tOI0vV07_IlX7PviEmRWFHbXXI8ys3CM9gkxYeQ96g1zqrG1G0ntW4sL9b3v8FBKbLYErkwelMqWNNxNY2rh2fRWCa-_62IjxEqOz" />
+                    <h5 class="font-serif text-lg text-on-background">Mangolu Chia Puding</h5>
+                    <p class="text-xs font-body text-secondary mt-1">Bal ile tatlandırılmış.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="font-serif text-primary text-lg">155 TL</span>
+                        <span class="material-symbols-outlined text-secondary hover:text-primary cursor-pointer" data-icon="add_circle">add_circle</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer Shell -->
+        <footer class="w-full py-12 bg-[#faf5ee] border-t border-[#d8d0c8]/40 flex flex-col items-center justify-center space-y-6 px-4 text-center">
+            <div class="flex space-x-8">
+                <a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Instagram</a>
+                <a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Facebook</a>
+                <a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Location</a>
+            </div>
+            <p class="text-stone-400 font-sans text-[10px] uppercase tracking-widest">© 2024 Fit &amp; Cake Studio. All rights reserved.</p>
+            <div class="pt-4">
+                <span class="text-xl font-serif italic text-[#c2652a] opacity-40">Sun-Baked Simplicity</span>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

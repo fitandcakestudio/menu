@@ -182,12 +182,12 @@
             </nav>
             <!-- Secondary/Footer Links -->
             <div class="pt-12 mt-auto border-t border-outline-variant/30 flex flex-col space-y-4">
-                <a class="flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#">
-                    <span class="material-symbols-outlined text-lg" data-icon="info">info</span>
+                <a class="nav-link flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#hakkimizda">
+                    <span class="material-symbols-outlined text-lg">info</span>
                     <span>Hakkımızda</span>
                 </a>
-                <a class="flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#">
-                    <span class="material-symbols-outlined text-lg" data-icon="mail">mail</span>
+                <a class="nav-link flex items-center space-x-3 text-secondary text-sm hover:text-primary transition-colors" href="#iletisim">
+                    <span class="material-symbols-outlined text-lg">mail</span>
                     <span>İletişim</span>
                 </a>
                 <div class="pt-8">
@@ -209,9 +209,9 @@
                         Doğanın sunduğu en saf malzemelerle, işlenmiş şekerden uzak, modern bir pastane deneyimi. Her dilimde sağlıklı bir hikaye.
                     </p>
                     <div class="mt-10 flex space-x-6">
-                        <button class="px-8 py-4 bg-primary text-on-primary font-body text-sm tracking-widest uppercase rounded-lg shadow-sm hover:opacity-90 transition-opacity">
+                        <a href="#sandvicler" class="px-8 py-4 bg-primary text-on-primary font-body text-sm tracking-widest uppercase rounded-lg shadow-sm hover:opacity-90 transition-opacity inline-block">
                             Menüyü Keşfet
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="md:col-span-5 relative">
@@ -221,6 +221,36 @@
                     <div class="absolute -bottom-6 -left-6 bg-tertiary p-8 text-on-tertiary rounded-lg hidden md:block max-w-[200px]">
                         <p class="font-serif italic text-xl">100% Doğal İçerik</p>
                         <p class="font-body text-xs mt-2 uppercase tracking-tighter opacity-80">Rafine Şeker İçermez</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Aesthetic Mid-Section: The Philosophy -->
+        <section id="hakkimizda" class="bg-surface-contain-low my-12 py-24 px-8 md:px-16 overflow-hidden">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-5xl md:text-6xl font-serif italic text-secondary leading-tight">İyi Malzeme,<br /><span class="text-on-background not-italic">İyi Hisler.</span></h3>
+                    <p class="mt-8 font-body text-on-surface-variant text-lg leading-relaxed max-w-md">
+                        Mutfak felsefemiz basitliğe dayanır. Yerel üreticilerden aldığımız taze meyveler, tam tahıllı unlar ve doğal tatlandırıcılarla bedeninize saygı duyuyoruz.
+                    </p>
+                    <div class="mt-12 grid grid-cols-2 gap-8 border-t border-outline-variant/40 pt-8">
+                        <div>
+                            <span class="block text-3xl font-serif text-primary">0%</span>
+                            <span class="block text-xs uppercase tracking-widest font-body mt-1">Rafine Şeker</span>
+                        </div>
+                        <div>
+                            <span class="block text-3xl font-serif text-primary">100%</span>
+                            <span class="block text-xs uppercase tracking-widest font-body mt-1">El Yapımı</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex gap-4">
+                    <div class="w-1/2 pt-12">
+                        <img alt="Berry Tart" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="An editorial close-up of a healthy berry tart made with almond crust and fresh raspberries. The lighting is moody but warm, with deep shadows and soft highlights on the fruit's texture. Minimalist styling on a dark wood surface that complements the warm sienna and burnt orange branding. The composition is artistic and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxyZE3fwqJ-bM_shRUNpSTEUiix4W-q1DBPsBfYwRfce7FPR7Sk8Yso1xUXqPQ2PXypEHTgtJCV9xjrRzaxqHOocbgXUIrYyde9o_YiobAGH_khIQAa0FJ9A8clIrWTBmOXHTKpk86-SIl20PDQ63g0Cbiosqn15chHZ19maTls01HJb-jaMO97Ve-YDDloaOQrsHnbW4q2M89I1vVsqpc83j5fbglHD2BiUFlEh7RkBJYv9MdCNzUBxaF2Nm_gJ0OsGOJcbjf45cx" />
+                    </div>
+                    <div class="w-1/2">
+                        <img alt="Smoothie Bowl" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="A vibrant and healthy acai bowl topped with granola, coconut flakes, and chia seeds. The bowl is handcrafted stone and sits on a clean, sunlit marble surface. The color palette is dominated by warm purples, creams, and golden browns. High-key lighting creates a fresh, energetic, and clean atmosphere typical of a premium health-focused studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBreN1w9iOaNzRsZL14xnPKo1bLKGUl3rAOOaxLftV0tcOXOiwFR75zOFz60V1lpvHTl8MLbDIBAXfXTK6fDQ5u_z_6GFZDiwLii3LKoY7410O4aXEUgWgZf_y4gPAMlAZJOlUC6p9cgnGw3GOsZKPkbb-BERecJdVi0_sD-DBIRQ-S-b1c96ltp_awUekOggzwzbKRqlx_bp_vHqcGagKODj7q_hrf-03vR5G80NWuo_OiYPT0pkpElncBCUkZ53BYBJjp4VP0t__x" />
                     </div>
                 </div>
             </div>
@@ -289,35 +319,7 @@
                 </div>
             </div>
         </section>
-        <!-- Aesthetic Mid-Section: The Philosophy -->
-        <section class="bg-surface-container-low my-12 py-24 px-8 md:px-16 overflow-hidden">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-                <div class="w-full md:w-1/2">
-                    <h3 class="text-5xl md:text-6xl font-serif italic text-secondary leading-tight">İyi Malzeme,<br /><span class="text-on-background not-italic">İyi Hisler.</span></h3>
-                    <p class="mt-8 font-body text-on-surface-variant text-lg leading-relaxed max-w-md">
-                        Mutfak felsefemiz basitliğe dayanır. Yerel üreticilerden aldığımız taze meyveler, tam tahıllı unlar ve doğal tatlandırıcılarla bedeninize saygı duyuyoruz.
-                    </p>
-                    <div class="mt-12 grid grid-cols-2 gap-8 border-t border-outline-variant/40 pt-8">
-                        <div>
-                            <span class="block text-3xl font-serif text-primary">0%</span>
-                            <span class="block text-xs uppercase tracking-widest font-body mt-1">Rafine Şeker</span>
-                        </div>
-                        <div>
-                            <span class="block text-3xl font-serif text-primary">100%</span>
-                            <span class="block text-xs uppercase tracking-widest font-body mt-1">El Yapımı</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 flex gap-4">
-                    <div class="w-1/2 pt-12">
-                        <img alt="Berry Tart" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="An editorial close-up of a healthy berry tart made with almond crust and fresh raspberries. The lighting is moody but warm, with deep shadows and soft highlights on the fruit's texture. Minimalist styling on a dark wood surface that complements the warm sienna and burnt orange branding. The composition is artistic and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxyZE3fwqJ-bM_shRUNpSTEUiix4W-q1DBPsBfYwRfce7FPR7Sk8Yso1xUXqPQ2PXypEHTgtJCV9xjrRzaxqHOocbgXUIrYyde9o_YiobAGH_khIQAa0FJ9A8clIrWTBmOXHTKpk86-SIl20PDQ63g0Cbiosqn15chHZ19maTls01HJb-jaMO97Ve-YDDloaOQrsHnbW4q2M89I1vVsqpc83j5fbglHD2BiUFlEh7RkBJYv9MdCNzUBxaF2Nm_gJ0OsGOJcbjf45cx" />
-                    </div>
-                    <div class="w-1/2">
-                        <img alt="Smoothie Bowl" class="rounded-xl aspect-[3/4] object-cover shadow-lg" data-alt="A vibrant and healthy acai bowl topped with granola, coconut flakes, and chia seeds. The bowl is handcrafted stone and sits on a clean, sunlit marble surface. The color palette is dominated by warm purples, creams, and golden browns. High-key lighting creates a fresh, energetic, and clean atmosphere typical of a premium health-focused studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBreN1w9iOaNzRsZL14xnPKo1bLKGUl3rAOOaxLftV0tcOXOiwFR75zOFz60V1lpvHTl8MLbDIBAXfXTK6fDQ5u_z_6GFZDiwLii3LKoY7410O4aXEUgWgZf_y4gPAMlAZJOlUC6p9cgnGw3GOsZKPkbb-BERecJdVi0_sD-DBIRQ-S-b1c96ltp_awUekOggzwzbKRqlx_bp_vHqcGagKODj7q_hrf-03vR5G80NWuo_OiYPT0pkpElncBCUkZ53BYBJjp4VP0t__x" />
-                    </div>
-                </div>
-            </div>
-        </section>
+
         
         
         <!-- Category Section: Tatlılar & Şeker İlavesiz -->
@@ -363,7 +365,7 @@
         
         <section id="seker-ilavesiz" class="px-8 md:px-16 py-12 max-w-7xl mx-auto mb-24">
         
-            <h3 class="text-4xl font-serif mb-12">Şeker İlavesizler</h3>
+            <h3 class="text-4xl font-serif mb-12">Şeker İlavesiz</h3>
         
             <!-- Kahvaltılık Bowl -->
             <div id="kahvaltilik-bowl" class="mb-16 scroll-mt-24">
@@ -436,12 +438,30 @@
         </section>
         
         <!-- Footer Shell -->
-        <footer class="w-full py-12 bg-[#faf5ee] border-t border-[#d8d0c8]/40 flex flex-col items-center justify-center space-y-6 px-4 text-center">
-            <div class="flex space-x-8">
-                <a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Instagram</a>
-                <a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Facebook</a>
-                <a class="text-[#5a4e46] hover:text-[#c2652a] font-sans text-xs uppercase tracking-widest transition-all" href="#">Location</a>
+        <footer id="iletisim" class="w-full py-12 bg-[#faf5ee] border-t border-[#d8d0c8]/40 flex flex-col items-center justify-center space-y-6 px-4 text-center">
+            <div class="flex flex-col items-center space-y-3 text-sm">
+                <!-- Instagram -->
+                <a href="https://instagram.com/INSTAGRAM_KULLANICI_ADIN" target="_blank"
+                   class="flex items-center space-x-2 text-[#5a4e46] hover:text-[#c2652a] transition-all">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                    <span>Instagram</span>
+                </a>
+            
+                <!-- Telefon -->
+                <a href="https://wa.me/905385595936?text=Merhaba%20sipariş%20vermek%20istiyorum" target="_blank"
+                   class="flex items-center space-x-2 text-[#5a4e46] hover:text-[#c2652a] transition-all">
+                    
+                    <span class="material-symbols-outlined">call</span>
+                    <span>0538 559 59 36</span>
+                </a>
+        
+                <!-- Lokasyon -->
+                <div class="flex items-center space-x-2 text-[#5a4e46]">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span>Çekmeköy / İstanbul</span>
+                </div>
             </div>
+            
             <p class="text-stone-400 font-sans text-[10px] uppercase tracking-widest">© 2024 Fit &amp; Cake Studio. All rights reserved.</p>
             <div class="pt-4">
                 <span class="text-xl font-serif italic text-[#c2652a] opacity-40">Sun-Baked Simplicity</span>

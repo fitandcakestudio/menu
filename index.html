@@ -114,6 +114,13 @@
             scroll-margin-top: 100px;
         }
         
+        .nav-link.active {
+            color: #c2652a;
+            font-weight: bold;
+            border-right: 4px solid #c2652a;
+            background: rgba(0,0,0,0.03);
+        }
+        
     </style>
 </head>
 
@@ -138,13 +145,13 @@
             <nav class="space-y-2">
                 <!-- Sandviçler (Active) -->
                 <div class="group">
-                    <a class="flex items-center space-x-3 p-3 text-[#c2652a] font-bold border-r-4 border-[#c2652a] bg-stone-100/50 transition-all duration-100 scale-95 origin-left" href="#sandvicler">
+                    <a class="nav-link flex items-center space-x-3 p-3 text-[#5a4e46] transition-all duration-300" href="#sandvicler">
                         <span class="material-symbols-outlined" data-icon="lunch_dining">lunch_dining</span>
                         <span class="text-base">Sandviçler</span>
                     </a>
                 </div>
                 <!-- Tatlılar -->
-                <a class="flex items-center space-x-3 p-3 text-[#5a4e46] hover:bg-stone-100 transition-all duration-300" href="#tatlilar">
+                <a class="nav-link flex items-center space-x-3 p-3 text-[#5a4e46]" href="#tatlilar">
                     <span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
                     <span class="text-base">Tatlılar</span>
                 </a>
@@ -152,7 +159,7 @@
                 
                 
                 <div class="group">
-                    <a class="flex items-center space-x-3 p-3 text-[#5a4e46] hover:bg-stone-100 transition-all duration-300" href="#seker-ilavesiz">
+                    <a class="nav-link flex items-center space-x-3 p-3 text-[#5a4e46]" href="#seker-ilavesiz">
                         <span class="material-symbols-outlined">spa</span>
                         <span class="text-base">Şeker İlavesiz Tatlılar</span>
                     </a>
@@ -438,6 +445,37 @@
             </div>
         </footer>
     </main>
+    <script>
+    const links = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section");
+    
+    // CLICK → highlight
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            links.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+    
+    // SCROLL → auto highlight
+    window.addEventListener("scroll", () => {
+        let current = "";
+    
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if (scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+        });
+    
+        links.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>

@@ -121,6 +121,12 @@
             background: rgba(0,0,0,0.03);
         }
         
+        .nav-sublink.active {
+            color: #c2652a;
+            font-weight: 600;
+            
+        }
+        
     </style>
 </head>
 
@@ -155,8 +161,8 @@
                     <span class="material-symbols-outlined" data-icon="bakery_dining">bakery_dining</span>
                     <span class="text-base">Tatlılar</span>
                 </a>
-                <!-- Şeker İlavesiz Tatlılar -->
                 
+                <!-- Şeker İlavesiz Tatlılar -->
                 
                 <div class="group">
                     <a class="nav-link flex items-center space-x-3 p-3 text-[#5a4e46]" href="#seker-ilavesiz">
@@ -165,17 +171,12 @@
                     </a>
                 
                     <div class="ml-10 mt-2 space-y-2 flex flex-col border-l border-outline-variant/40 pl-4">
-                        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#kahvaltilik-bowl">Kahvaltılık Bowl</a>
-                        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#kahvaltilik-parfait">Kahvaltılık Parfait</a>
-                        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#cheesecake-cup">Cheesecake Cup</a>
-                        <a class="text-sm text-on-surface-variant hover:text-primary transition-colors" href="#atistirmaliklar">Atıştırmalıklar</a>
+                        <a class="nav-sublink text-sm text-on-surface-variant transition-colors" href="#kahvaltilik-bowl">Kahvaltılık Bowl</a>
+                        <a class="nav-sublink text-sm text-on-surface-variant transition-colors" href="#kahvaltilik-parfait">Kahvaltılık Parfait</a>
+                        <a class="nav-sublink text-sm text-on-surface-variant transition-colors" href="#cheesecake-cup">Cheesecake Cup</a>
+                        <a class="nav-sublink text-sm text-on-surface-variant transition-colors" href="#atistirmaliklar">Atıştırmalıklar</a>
                     </div>
                 </div>
-                
-                
-                
-                
-                
                 
                 
             </nav>
@@ -224,6 +225,7 @@
                 </div>
             </div>
         </section>
+        
         <!-- Category Section: Sandviçler -->
         <section id="sandvicler" class="px-8 md:px-16 py-12 max-w-7xl mx-auto">
             <div class="flex items-baseline justify-between mb-12 border-b border-outline-variant/40 pb-4">
@@ -316,8 +318,9 @@
                 </div>
             </div>
         </section>
-        <!-- Category Section: Tatlılar & Şeker İlavesiz -->
         
+        
+        <!-- Category Section: Tatlılar & Şeker İlavesiz -->
         
         
         <!-- Category Section: Tatlılar -->
@@ -475,6 +478,41 @@
             }
         });
     });
+    
+    
+    const subLinks = document.querySelectorAll(".nav-sublink");
+
+    // CLICK → alt kategori highlight
+    subLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            subLinks.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+    
+    // SCROLL → alt kategori auto highlight
+    window.addEventListener("scroll", () => {
+        let currentSub = "";
+    
+        subLinks.forEach(link => {
+            const section = document.querySelector(link.getAttribute("href"));
+            if (!section) return;
+    
+            const sectionTop = section.offsetTop - 140;
+    
+            if (scrollY >= sectionTop) {
+                currentSub = link.getAttribute("href");
+            }
+        });
+    
+        subLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === currentSub) {
+                link.classList.add("active");
+            }
+        });
+    });
+    
     </script>
 </body>
 

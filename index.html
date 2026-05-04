@@ -127,6 +127,15 @@
             
         }
         
+        .no-scrollbar::-webkit-scrollbar {
+            display: none !important;
+        }
+        
+        .no-scrollbar {
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+        }
+        
     </style>
 </head>
 
@@ -407,17 +416,17 @@
                 <div class="relative">
             
                     <!-- SOL BUTON -->
-                    <button onclick="scrollSlider(this, -1)"
+                    <button onclick="scrollSlider('bowl-slider', -1)"
                         class="absolute left-[-10px] top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur shadow-md w-10 h-10 rounded-full flex items-center justify-center hover:bg-white">
                         ‹
                     </button>
             
                     <!-- SCROLL AREA -->
-                    <div class="overflow-x-auto scroll-smooth no-scrollbar">
+                    <div id="bowl-slider" class="overflow-x-auto scroll-smooth no-scrollbar">
                         <div class="grid grid-flow-col auto-cols-[280px] gap-6">
             
                             <!-- Ürün 1 -->
-                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col h-full">
+                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 flex flex-col h-full">
                                 <div class="relative mb-4">
                                     <img class="w-full aspect-square object-cover rounded-lg"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNPGVKR_Ai2ehP1W1-bUfdfYYqGnXeLlG-bSoEJwljDXvrcFfl4sYD9dI3IU5FKkAUmMDeTjwzPxgRAgdZvle5dEK3uuF7VtbbWWVp-8k8F5V__mNIuPDCi9XY5J5EXk7sli01r7_6BeWobBhFZqckg_cCABHOwCXVtYBtry2tOI0vV07_IlX7PviEmRWFHbXXI8ys3CM9gkxYeQ96g1zqrG1G0ntW4sL9b3v8FBKbLYErkwelMqWNNxNY2rh2fRWCa-_62IjxEqOz" />
@@ -430,15 +439,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col flex-grow">
-                                    <h4 class="text-xl font-serif text-on-background">Mangolu Chia Puding</h4>
-                                    <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
-                                </div>
+                                <h4 class="text-xl font-serif">Mangolu Chia Puding</h4>
+                                <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
                                 <p class="text-lg font-serif text-primary mt-auto">₺ 155</p>
                             </div>
             
                             <!-- Ürün 2 -->
-                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col h-full">
+                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 flex flex-col h-full">
                                 <div class="relative mb-4">
                                     <img class="w-full aspect-square object-cover rounded-lg"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNPGVKR_Ai2ehP1W1-bUfdfYYqGnXeLlG-bSoEJwljDXvrcFfl4sYD9dI3IU5FKkAUmMDeTjwzPxgRAgdZvle5dEK3uuF7VtbbWWVp-8k8F5V__mNIuPDCi9XY5J5EXk7sli01r7_6BeWobBhFZqckg_cCABHOwCXVtYBtry2tOI0vV07_IlX7PviEmRWFHbXXI8ys3CM9gkxYeQ96g1zqrG1G0ntW4sL9b3v8FBKbLYErkwelMqWNNxNY2rh2fRWCa-_62IjxEqOz" />
@@ -451,15 +458,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col flex-grow">
-                                    <h4 class="text-xl font-serif text-on-background">Mangolu Chia Puding</h4>
-                                    <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
-                                </div>
+                                <h4 class="text-xl font-serif">Mangolu Chia Puding</h4>
+                                <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
                                 <p class="text-lg font-serif text-primary mt-auto">₺ 155</p>
                             </div>
             
                             <!-- Ürün 3 -->
-                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col h-full">
+                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 flex flex-col h-full">
                                 <div class="relative mb-4">
                                     <img class="w-full aspect-square object-cover rounded-lg"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNPGVKR_Ai2ehP1W1-bUfdfYYqGnXeLlG-bSoEJwljDXvrcFfl4sYD9dI3IU5FKkAUmMDeTjwzPxgRAgdZvle5dEK3uuF7VtbbWWVp-8k8F5V__mNIuPDCi9XY5J5EXk7sli01r7_6BeWobBhFZqckg_cCABHOwCXVtYBtry2tOI0vV07_IlX7PviEmRWFHbXXI8ys3CM9gkxYeQ96g1zqrG1G0ntW4sL9b3v8FBKbLYErkwelMqWNNxNY2rh2fRWCa-_62IjxEqOz" />
@@ -472,15 +477,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col flex-grow">
-                                    <h4 class="text-xl font-serif text-on-background">Mangolu Chia Puding</h4>
-                                    <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
-                                </div>
+                                <h4 class="text-xl font-serif">Mangolu Chia Puding</h4>
+                                <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
                                 <p class="text-lg font-serif text-primary mt-auto">₺ 155</p>
                             </div>
             
                             <!-- Ürün 4 -->
-                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col h-full">
+                            <div class="bg-white p-4 rounded-xl border border-outline-variant/20 flex flex-col h-full">
                                 <div class="relative mb-4">
                                     <img class="w-full aspect-square object-cover rounded-lg"
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNPGVKR_Ai2ehP1W1-bUfdfYYqGnXeLlG-bSoEJwljDXvrcFfl4sYD9dI3IU5FKkAUmMDeTjwzPxgRAgdZvle5dEK3uuF7VtbbWWVp-8k8F5V__mNIuPDCi9XY5J5EXk7sli01r7_6BeWobBhFZqckg_cCABHOwCXVtYBtry2tOI0vV07_IlX7PviEmRWFHbXXI8ys3CM9gkxYeQ96g1zqrG1G0ntW4sL9b3v8FBKbLYErkwelMqWNNxNY2rh2fRWCa-_62IjxEqOz" />
@@ -493,10 +496,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col flex-grow">
-                                    <h4 class="text-xl font-serif text-on-background">Mangolu Chia Puding</h4>
-                                    <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
-                                </div>
+                                <h4 class="text-xl font-serif">Mangolu Chia Puding</h4>
+                                <p class="text-xs text-secondary mt-1">Bal ile tatlandırılmış.</p>
                                 <p class="text-lg font-serif text-primary mt-auto">₺ 155</p>
                             </div>
             
@@ -504,7 +505,7 @@
                     </div>
             
                     <!-- SAĞ BUTON -->
-                    <button onclick="scrollSlider(this, 1)"
+                    <button onclick="scrollSlider('bowl-slider', 1)"
                         class="absolute right-[-10px] top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur shadow-md w-10 h-10 rounded-full flex items-center justify-center hover:bg-white">
                         ›
                     </button>
@@ -937,26 +938,28 @@
                 link.classList.add("active");
             }
         });
-    });
-    
-    function scrollSlider(btn, direction) {
-    const container = btn.parentElement.querySelector('.overflow-x-auto');
-
-    container.scrollBy({
-        left: direction * 300,
-        behavior: 'smooth'
-    });
         
-    }
+    });
     
-    .no-scrollbar::-webkit-scrollbar {
-    display: none;
+    function scrollSlider(id, direction) {
+    const container = document.getElementById(id);
+
+    if (!container) return;
+
+    if (direction === 1) {
+        container.scrollTo({
+            left: container.scrollWidth,
+            behavior: 'smooth'
+        });
+    } else {
+        container.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+        });
     }
+}
     
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
+
     
     </script>
 </body>

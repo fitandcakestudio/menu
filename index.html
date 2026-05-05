@@ -143,6 +143,12 @@
 </head>
 
 <body class="bg-background text-on-background antialiased">
+    <!-- DESKTOP LOGIN ICON -->
+    <div class="hidden md:flex fixed top-6 right-8 z-50">
+        <a href="#" class="text-[#c2652a]">
+            <span class="material-symbols-outlined text-3xl">account_circle</span>
+        </a>
+    </div>
     <!-- Mobile Top Bar (Hidden on Desktop) -->
     <header class="fixed top-0 w-full z-40 bg-[#faf5ee]/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-[#d8d0c8]/40 dark:border-stone-800 flex justify-between items-center px-6 py-4 md:hidden">
 
@@ -1115,22 +1121,34 @@
     
         <!-- NAV LINKS -->
         <nav class="flex flex-col space-y-6 text-lg font-medium">
-    
+        
             <a href="#sandvicler" onclick="toggleMenu()" class="hover:text-[#c2652a]">Sandviçler</a>
             <a href="#tatlilar" onclick="toggleMenu()" class="hover:text-[#c2652a]">Tatlılar</a>
-    
-            <div class="border-t border-[#d8d0c8] pt-6 flex flex-col space-y-4 text-base">
-                <a href="#kahvaltilik-bowl" onclick="toggleMenu()">Kahvaltılık Bowl</a>
-                <a href="#kahvaltilik-parfait" onclick="toggleMenu()">Kahvaltılık Parfait</a>
-                <a href="#cheesecake-cup" onclick="toggleMenu()">Cheesecake Cup</a>
-                <a href="#atistirmaliklar" onclick="toggleMenu()">Atıştırmalıklar</a>
+        
+            <!-- ŞEKER İLAVESİZLER -->
+            <div class="border-t border-[#d8d0c8] pt-6">
+        
+                <a href="#seker-ilavesiz" onclick="toggleMenu()" class="block mb-4 hover:text-[#c2652a]">
+                    Şeker İlavesizler
+                </a>
+        
+                <div class="ml-4 pl-3 border-l border-[#d8d0c8] flex flex-col space-y-3 text-base text-[#5a4e46]">
+        
+                    <a href="#kahvaltilik-bowl" onclick="toggleMenu()">Kahvaltılık Bowl</a>
+                    <a href="#kahvaltilik-parfait" onclick="toggleMenu()">Kahvaltılık Parfait</a>
+                    <a href="#cheesecake-cup" onclick="toggleMenu()">Cheesecake Cup</a>
+                    <a href="#atistirmaliklar" onclick="toggleMenu()">Atıştırmalıklar</a>
+        
+                </div>
+        
             </div>
-    
+        
+            <!-- FOOTER -->
             <div class="border-t border-[#d8d0c8] pt-6 flex flex-col space-y-4 text-base">
                 <a href="#hakkimizda" onclick="toggleMenu()">Hakkımızda</a>
                 <a href="#iletisim" onclick="toggleMenu()">İletişim</a>
             </div>
-    
+        
         </nav>
     
     </div>

@@ -1088,15 +1088,21 @@
             behavior: 'smooth'
         });
     }
-}
+    }
     function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
     menu.classList.toggle("hidden");
 
     // scroll kilidi (çok önemli UX)
     document.body.classList.toggle("overflow-hidden");
-}
-
+    }
+    // REFRESH → sayfayı en üste al (anchor jump fix)
+    window.addEventListener("load", () => {
+        if (window.location.hash) {
+            history.replaceState(null, null, " ");
+        }
+        window.scrollTo(0, 0);
+    });
     
     </script>
     

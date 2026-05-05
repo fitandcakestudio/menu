@@ -168,8 +168,17 @@
 
         
         <div class="flex items-center space-x-4">
-            <span class="material-symbols-outlined text-[#c2652a]">search</span>
-            <span class="material-symbols-outlined text-[#c2652a]">account_circle</span>
+        
+            <!-- HAMBURGER (SADECE MOBİL) -->
+            <button onclick="toggleMenu()" class="text-[#c2652a] md:hidden">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        
+            <!-- LOGIN (HER ZAMAN) -->
+            <a href="#" class="text-[#c2652a]">
+                <span class="material-symbols-outlined text-3xl">account_circle</span>
+            </a>
+        
         </div>
     </header>
     <!-- SideNavBar (Desktop Shell) -->
@@ -1074,10 +1083,57 @@
         });
     }
 }
-    
+    function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+
+    // scroll kilidi (çok önemli UX)
+    document.body.classList.toggle("overflow-hidden");
+}
 
     
     </script>
+    
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="fixed inset-0 bg-[#faf5ee] z-50 hidden flex flex-col p-6 md:hidden">
+    
+        <!-- CLOSE -->
+        <div class="flex justify-between items-center mb-10">
+    
+            <!-- LOGO -->
+            <img 
+                src="src/logo.png" 
+                class="w-16 object-contain"
+            >
+    
+            <!-- CLOSE BUTTON -->
+            <button onclick="toggleMenu()">
+                <span class="material-symbols-outlined text-3xl text-[#c2652a]">close</span>
+            </button>
+    
+        </div>
+    
+        <!-- NAV LINKS -->
+        <nav class="flex flex-col space-y-6 text-lg font-medium">
+    
+            <a href="#sandvicler" onclick="toggleMenu()" class="hover:text-[#c2652a]">Sandviçler</a>
+            <a href="#tatlilar" onclick="toggleMenu()" class="hover:text-[#c2652a]">Tatlılar</a>
+    
+            <div class="border-t border-[#d8d0c8] pt-6 flex flex-col space-y-4 text-base">
+                <a href="#kahvaltilik-bowl" onclick="toggleMenu()">Kahvaltılık Bowl</a>
+                <a href="#kahvaltilik-parfait" onclick="toggleMenu()">Kahvaltılık Parfait</a>
+                <a href="#cheesecake-cup" onclick="toggleMenu()">Cheesecake Cup</a>
+                <a href="#atistirmaliklar" onclick="toggleMenu()">Atıştırmalıklar</a>
+            </div>
+    
+            <div class="border-t border-[#d8d0c8] pt-6 flex flex-col space-y-4 text-base">
+                <a href="#hakkimizda" onclick="toggleMenu()">Hakkımızda</a>
+                <a href="#iletisim" onclick="toggleMenu()">İletişim</a>
+            </div>
+    
+        </nav>
+    
+    </div>
 </body>
 
 </html>

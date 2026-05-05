@@ -150,11 +150,25 @@
     </header>
     <!-- SideNavBar (Desktop Shell) -->
     <aside class="fixed left-0 top-0 h-screen w-72 hidden md:flex flex-col bg-[#faf5ee] border-r border-[#d8d0c8]/60 sidebar-scroll overflow-y-auto">
+        
         <div class="flex flex-col p-8 space-y-4">
+            
             <!-- Brand Section -->
-            <div class="mb-10">
-                <h1 class="text-3xl font-serif text-[#c2652a] leading-tight">Fit &amp; Cake<br />Studio</h1>
-                <p class="text-sm font-body lowercase tracking-[0.2em] text-secondary mt-2 opacity-70">sweet treats &amp; happiness</p>
+            <div class="mb-10 flex items-center gap-4">
+                
+                <!-- LOGO -->
+                <img src="/logo.png" alt="Fit & Cake Logo" class="w-14 h-14 object-contain">
+    
+                <!-- TEXT -->
+                <div>
+                    <h1 class="text-3xl font-serif text-[#c2652a] leading-tight">
+                        Fit &amp; Cake<br />Studio
+                    </h1>
+                    <p class="text-sm font-body lowercase tracking-[0.2em] text-secondary mt-2 opacity-70">
+                        sweet treats &amp; happiness
+                    </p>
+                </div>
+    
             </div>
             <!-- Primary Navigation Tabs -->
             <nav class="space-y-2">
@@ -336,71 +350,89 @@
         
         <!-- Category Section: Tatlılar -->
         <section id="tatlilar" class="px-8 md:px-16 py-12 max-w-7xl mx-auto">
+            
             <div class="flex items-baseline justify-between mb-12 border-b border-outline-variant/40 pb-4">
                 <h3 class="text-4xl font-serif text-on-background">Tatlılar</h3>
                 <span class="font-body text-sm text-secondary uppercase tracking-widest">Klasik Lezzetler</span>
             </div>
         
-            <!-- SCROLL WRAPPER -->
-            <div class="overflow-x-auto scroll-smooth">
-                <div class="grid grid-flow-col auto-cols-[280px] gap-6">
+            <div class="relative">
         
-                    <!-- Ürün 1 -->
-                    <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col h-full">
-                        <div class="relative mb-4">
-                            <img class="w-full aspect-square object-cover rounded-lg" 
-                                src="https://images.unsplash.com/photo-1551024506-0bccd828d307" />
-                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-[10px] font-bold text-primary">
-                                320 kcal
+                <!-- SOL BUTON -->
+                <button onclick="scrollSlider('tatli-slider', -1)"
+                    class="absolute left-[-10px] top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur shadow-md w-10 h-10 rounded-full flex items-center justify-center hover:bg-white">
+                    ‹
+                </button>
+        
+                <!-- SCROLL AREA -->
+                <div id="tatli-slider" class="overflow-x-auto scroll-smooth no-scrollbar">
+                    <div class="grid grid-flow-col auto-cols-[280px] gap-6">
+        
+                        <!-- Ürün 1 -->
+                        <div class="bg-white p-4 rounded-xl border border-outline-variant/20 flex flex-col h-full">
+                            <div class="relative mb-4">
+                                <img class="w-full aspect-square object-cover rounded-lg" 
+                                    src="https://images.unsplash.com/photo-1551024506-0bccd828d307" />
+                                <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-[10px] font-bold text-primary">
+                                    320 kcal
+                                </div>
                             </div>
-                        </div>
         
-                        <div class="flex flex-col flex-grow">
-                            <h4 class="text-xl font-serif text-on-background">Lotus Cheesecake</h4>
-                            <p class="text-xs text-secondary mt-1">Klasik tatlı severler için.</p>
-                        </div>
-        
-                        <p class="text-lg font-serif text-primary mt-auto">₺ 190</p>
-                    </div>
-        
-                    <!-- Ürün 2 -->
-                    <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col h-full">
-                        <div class="relative mb-4">
-                            <img class="w-full aspect-square object-cover rounded-lg" 
-                                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" />
-                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-[10px] font-bold text-primary">
-                                350 kcal
+                            <div class="flex flex-col flex-grow">
+                                <h4 class="text-xl font-serif text-on-background">Lotus Cheesecake</h4>
+                                <p class="text-xs text-secondary mt-1">Klasik tatlı severler için.</p>
                             </div>
+        
+                            <p class="text-lg font-serif text-primary mt-auto">₺ 190</p>
                         </div>
         
-                        <div class="flex flex-col flex-grow">
-                            <h4 class="text-xl font-serif text-on-background">Çikolatalı Pasta</h4>
-                            <p class="text-xs text-secondary mt-1">Yoğun kakao lezzeti.</p>
-                        </div>
-        
-                        <p class="text-lg font-serif text-primary mt-auto">₺ 175</p>
-                    </div>
-        
-                    <!-- Ürün 3 -->
-                    <div class="bg-white p-4 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col h-full">
-                        <div class="relative mb-4">
-                            <img class="w-full aspect-square object-cover rounded-lg" 
-                                src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c" />
-                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-[10px] font-bold text-primary">
-                                370 kcal
+                        <!-- Ürün 2 -->
+                        <div class="bg-white p-4 rounded-xl border border-outline-variant/20 flex flex-col h-full">
+                            <div class="relative mb-4">
+                                <img class="w-full aspect-square object-cover rounded-lg" 
+                                    src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" />
+                                <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-[10px] font-bold text-primary">
+                                    350 kcal
+                                </div>
                             </div>
+        
+                            <div class="flex flex-col flex-grow">
+                                <h4 class="text-xl font-serif text-on-background">Çikolatalı Pasta</h4>
+                                <p class="text-xs text-secondary mt-1">Yoğun kakao lezzeti.</p>
+                            </div>
+        
+                            <p class="text-lg font-serif text-primary mt-auto">₺ 175</p>
                         </div>
         
-                        <div class="flex flex-col flex-grow">
-                            <h4 class="text-xl font-serif text-on-background">San Sebastian</h4>
-                            <p class="text-xs text-secondary mt-1">Akışkan iç dolgulu.</p>
+                        <!-- Ürün 3 -->
+                        <div class="bg-white p-4 rounded-xl border border-outline-variant/20 flex flex-col h-full">
+                            <div class="relative mb-4">
+                                <img class="w-full aspect-square object-cover rounded-lg" 
+                                    src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c" />
+                                <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-[10px] font-bold text-primary">
+                                    370 kcal
+                                </div>
+                            </div>
+        
+                            <div class="flex flex-col flex-grow">
+                                <h4 class="text-xl font-serif text-on-background">San Sebastian</h4>
+                                <p class="text-xs text-secondary mt-1">Akışkan iç dolgulu.</p>
+                            </div>
+        
+                            <p class="text-lg font-serif text-primary mt-auto">₺ 185</p>
                         </div>
         
-                        <p class="text-lg font-serif text-primary mt-auto">₺ 185</p>
                     </div>
-        
                 </div>
+        
+                <!-- SAĞ BUTON -->
+                <button onclick="scrollSlider('tatli-slider', 1)"
+                    class="absolute right-[-10px] top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur shadow-md w-10 h-10 rounded-full flex items-center justify-center hover:bg-white">
+                    ›
+                </button>
+        
             </div>
+        
         </section>
         
         
